@@ -1,0 +1,33 @@
+# Ignore build directories
+/build/
+/out/
+/bin/
+/lib/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/Makefile
+
+# Ignore generated files
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.dll
+*.exe
+*.out
+*.log
+
+# Ignore editor and OS specific files
+*.swp
+*.swo
+*.bak
+*.tmp
+*.DS_Store
+*.vscode/
+.idea/
+*.user
+*.userprefs
+*.sublime-project
+*.sublime-workspace
