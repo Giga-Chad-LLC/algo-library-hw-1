@@ -38,17 +38,6 @@ TEST(AVLTreeTest, BuildTreeFromPointer) {
 }
 
 
-TEST(AVLTreeTest, BuildTreeFromVector) {
-    trees::AVLTree<int> tree;
-
-    std::vector<int> items = {3, 2, 1};
-    tree.build(items);
-
-    for (int v : items) {
-        EXPECT_EQ(tree.count(v), 1);
-    }
-}
-
 
 TEST(AVLTreeTest, InsertIntoEmptyTree) {
     trees::AVLTree<int> tree;

@@ -1,6 +1,7 @@
 module;
 
-#include <vector>
+#include <functional>
+#include <memory>
 
 export module tree_algorithms;
 
@@ -14,7 +15,6 @@ template<typename T, typename Comp = std::less<T>, typename Alloc = std::allocat
 class BSTree {
 public:
     virtual void build(const T* items, size_t n) = 0;
-    virtual void build(const std::vector<T>& items) = 0;
 
     virtual void insert(const T&) = 0;
     virtual size_t count(const T&) = 0;
@@ -32,10 +32,6 @@ template<typename T, typename Comp = std::less<T>, typename Alloc = std::allocat
 class AVLTree : public BSTree<T, Comp, Alloc> {
 public:
     void build(const T* items, size_t n) final override {
-
-    }
-
-    void build(const std::vector<T>& items) final override {
 
     }
 
