@@ -14,3 +14,7 @@ TEST(TreeAlgorithmsTest, PrintMessage) {
 
     EXPECT_EQ(output, "Hello from tree_algorithms module! 20\n");
 }
+
+TEST(TreeAlgorithmsTest, AVLTree) {
+    trees::AVLTree<int> tree;
+}
