@@ -18,3 +18,15 @@ jobs:
 
       - name: Say Hello
         run: echo "Hello, World!"
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Build library
+        run: make build-ci
+
+      - name: Run tests
+        run: make test
+
+      - name: Run playground
+        run: make playground

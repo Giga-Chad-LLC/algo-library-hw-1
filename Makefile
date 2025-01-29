@@ -1,0 +1,63 @@
+# Installation for CI
+.PHONY: install
+install:
+	sudo apt-get -y update
+	install-llvm
+	install-cmake
+	install-ninja
+
+
+# Clang and LLVM
+.PHONY: install-llvm
+install-llvm:
+	wget https://apt.llvm.org/llvm.sh
+	chmod +x llvm.sh
+	sudo ./llvm.sh 19.1.7
+	clang++ --version
+
+# CMake
+.PHONY: install-cmake
+install-cmake:
+	sudo apt-get -y install cmake
+	cmake --version
+
+# Ninja
+.PHONY: install-ninja
+install-ninja:
+	sudo apt-get -y install ninja-build
+	ninja --version
+
+
+# Build setup
+.PHONY: build-ci
+build-ci: config-ci build
+
+.PHONY: config-ci
+config-ci:
+	cmake -S . -B build -G Ninja \
+		-DCMAKE_C_COMPILER=/usr/bin/clang \
+		-DCMAKE_CXX_COMPILER=/usr/bin/clang++
+
+
+.PHONY: config-local
+config-local:
+	cmake -S . -B build -G Ninja \
+		-DCMAKE_C_COMPILER=/usr/local/opt/llvm/bin/clang \
+		-DCMAKE_CXX_COMPILER=/usr/local/opt/llvm/bin/clang++
+
+
+.PHONY: build
+build:
+	cmake --build build
+
+
+
+# Executables
+.PHONY: test
+test:
+	./build/tests/test_tree_algorithms
+
+
+.PHONY: playground
+playground:
+	./build/playground/playground_tree_algorithms
