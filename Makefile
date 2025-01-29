@@ -12,7 +12,7 @@ install:
 install-llvm:
 	wget https://apt.llvm.org/llvm.sh
 	chmod +x llvm.sh
-	sudo ./llvm.sh 19.1.7
+	sudo ./llvm.sh 19
 	clang++ --version
 
 # CMake
