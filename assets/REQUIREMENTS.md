@@ -5,9 +5,9 @@
 1. Библиотека **позволяет** хранить дубликаты элементов в деревьях.
 1. Главный интерфейс: `BSTree<T, Comp, Alloc>` темплейтный класс, опеределяющий тип хранимых вершин `T`, компоратор для сравнения вершины (по дефолту `std::less<T>`) и аллокатор памяти (по дефолту `std::allocator<T>`, использующий глобавльные операторы `new` и `delete`).
 1. Интерфейсные методы:
-    - `void build(const T*)` строит дерево из элементов, лежаших по указателю (`T` должен быть [`CopyConstructible`](https://en.cppreference.com/w/cpp/named_req/CopyConstructible)).
+    - `void build(const T*, size_t)`, `void build(const std::vector<T>&)` строят дерево из элементов, лежаших по указателю (`T` должен быть [`CopyConstructible`](https://en.cppreference.com/w/cpp/named_req/CopyConstructible)).
     - `void insert(const T&)` добавляет элемент в дерево.
-    - `int count(const T&)` возвращает кол-во элементов в дереве.
+    - `size_t count(const T&)` возвращает кол-во элементов в дереве.
     - `bool remove(const T&)` удаляет элементы из дерева, возвращает `true`, если удаление имело место быть.
     - `void clear()` удаляет все элементы дерева.
     - `BSTree<T, Comp, Alloc>::Iterator begin() const` возвращает итератор, указывающий на наименьший элемент дерева.
