@@ -16,9 +16,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Say Hello
-        run: echo "Hello, World!"
-
       - name: Install dependencies
         run: make install
 
