@@ -2,9 +2,9 @@
 .PHONY: install
 install:
 	sudo apt-get -y update
-	install-llvm
-	install-cmake
-	install-ninja
+	make install-llvm
+	make install-cmake
+	make install-ninja
 
 
 # Clang and LLVM
