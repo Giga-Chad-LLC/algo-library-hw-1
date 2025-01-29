@@ -17,7 +17,7 @@ public:
     virtual void build(const std::vector<T>& items) = 0;
 
     virtual void insert(const T&) = 0;
-    virtual int count(const T&) = 0;
+    virtual size_t count(const T&) = 0;
     virtual bool remove(const T&) = 0;
     virtual void clear() = 0;
 
@@ -43,7 +43,7 @@ public:
 
     }
 
-    int count(const T&) final override {
+    size_t count(const T&) final override {
         return 0;
     }
 
