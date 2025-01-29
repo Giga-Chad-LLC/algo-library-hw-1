@@ -5,7 +5,7 @@
 # endif()
 
 # Define library target name
-SET(LIBRARY_TARGET tree_algorithms)
+set(LIBRARY_TARGET tree_algorithms)
 
 add_library(${LIBRARY_TARGET} STATIC)
 

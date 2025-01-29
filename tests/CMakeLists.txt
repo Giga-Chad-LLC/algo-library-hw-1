@@ -8,7 +8,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 # Define target name
-SET(TEST_TARGET test_tree_algorithms)
+set(TEST_TARGET test_tree_algorithms)
 
 # Add test executable
 add_executable(${TEST_TARGET}
