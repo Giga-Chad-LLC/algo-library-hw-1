@@ -1,6 +1,12 @@
 # Trees C++
 > С++ библиотека с имплементациями балансированных деревьев поиска.
 
+TODO: write about deps for building and how to install them on different systems:
+    1. Ninja >=1.11
+    1. CMake >=3.28
+    1. Clang >=17 | other compilers tbd
+
+
 ## Деревья в библиотеке
 1. `AVL`
     - Поддерживает инвариант в каждой вершине, что модуль разности высоты поддеревьев не более 1-цы.
