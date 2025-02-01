@@ -17,7 +17,10 @@ target_sources(${LIBRARY_TARGET} PUBLIC
 target_sources(${LIBRARY_TARGET}
     PUBLIC
     FILE_SET CXX_MODULES FILES
-        ${PROJECT_SOURCE_DIR}/src/modules/BSTree.ixx
+        ${PROJECT_SOURCE_DIR}/src/modules/tree_algorithms.ixx
+        # trees
+        ${PROJECT_SOURCE_DIR}/src/modules/trees/AVLTree.cpp
+        ${PROJECT_SOURCE_DIR}/src/modules/trees/BSTree.cpp
         # nodes
         ${PROJECT_SOURCE_DIR}/src/modules/nodes/TreeNode.cpp
 )
