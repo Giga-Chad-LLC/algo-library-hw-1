@@ -73,8 +73,33 @@ public:
         this->m_size++;
     }
 
-    size_t count(const T&) final override {
-        return 0;
+    size_t count(const T& value) final override {
+        // TODO: this implementation is too slow!
+        std::vector<TreeNode<T>*> stack;
+
+        if (this->m_root != nullptr) {
+            stack.push_back(this->m_root);
+        }
+
+        size_t answer = 0;
+
+        while (!stack.empty()) {
+            TreeNode<T> *node = stack.back();
+            stack.pop_back();
+
+            if (node->value == value) {
+                ++answer;
+            }
+
+            if (node->left != nullptr) {
+                stack.push_back(node->left);
+            }
+            if (node->right != nullptr) {
+                stack.push_back(node->right);
+            }
+        }
+
+        return answer;
     }
 
     bool remove(const T& value) final override {
