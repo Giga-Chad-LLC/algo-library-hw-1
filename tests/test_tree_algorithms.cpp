@@ -6,14 +6,6 @@
 import tree_algorithms;
 
 
-TEST(TreeAlgorithmsTest, PrintMessage) {
-    // Capture output and validate
-    testing::internal::CaptureStdout();
-    std::string output = testing::internal::GetCapturedStdout();
-
-    EXPECT_EQ(output, "Hello from tree_algorithms module! 20\n");
-}
-
 
 TEST(AVLTreeTest, BuildEmptyTree) {
     trees::AVLTree<int> tree;
