@@ -7,6 +7,8 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+# Enable testing
+include(CTest)
 
 # Define target name
 set(TEST_TARGET test_tree_algorithms)
@@ -28,8 +30,7 @@ enable_sanitizers_and_strict_warnings(${TEST_TARGET})
 # Link our library and Google Test
 target_link_libraries(${TEST_TARGET} PRIVATE tree_algorithms gtest_main)
 
-# Enable testing
-include(CTest)
+# Enable google test
 include(GoogleTest)
 gtest_discover_tests(${TEST_TARGET})
 
