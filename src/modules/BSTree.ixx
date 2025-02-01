@@ -3,6 +3,7 @@ module;
 #include <functional>
 #include <memory>
 #include <vector>
+#include <algorithm>
 
 export module tree_algorithms;
 import :nodes;
