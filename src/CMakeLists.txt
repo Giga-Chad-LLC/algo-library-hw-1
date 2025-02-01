@@ -11,13 +11,13 @@ add_library(${LIBRARY_TARGET} STATIC)
 
 # Add source files
 target_sources(${LIBRARY_TARGET} PUBLIC
-    ${PROJECT_SOURCE_DIR}/src/impl/tree_algorithms.cpp
+    ${PROJECT_SOURCE_DIR}/src/impl/BSTree.cpp
 )
 # Add source modules
 target_sources(${LIBRARY_TARGET}
     PUBLIC
     FILE_SET CXX_MODULES FILES
-        ${PROJECT_SOURCE_DIR}/src/modules/tree_algorithms.cpp
+        ${PROJECT_SOURCE_DIR}/src/modules/BSTree.cpp
 )
 
 # Enable C++20 modules
