@@ -7,7 +7,10 @@ module;
 
 export module tree_algorithms:AVLTree;
 import :BSTree;
-import :nodes;
+// nodes
+import :TreeNode;
+import :AVLTreeNode;
+
 
 
 namespace trees {

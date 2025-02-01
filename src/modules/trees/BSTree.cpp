@@ -6,7 +6,7 @@ module;
 #include <algorithm>
 
 export module tree_algorithms:BSTree;
-import :nodes;
+import :TreeNode;
 
 
 namespace trees {

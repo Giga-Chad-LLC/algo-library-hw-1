@@ -23,6 +23,7 @@ target_sources(${LIBRARY_TARGET}
         ${PROJECT_SOURCE_DIR}/src/modules/trees/BSTree.cpp
         # nodes
         ${PROJECT_SOURCE_DIR}/src/modules/nodes/TreeNode.cpp
+        ${PROJECT_SOURCE_DIR}/src/modules/nodes/AVLTreeNode.cpp
 )
 
 # Enable C++20 modules
