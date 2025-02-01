@@ -2,6 +2,7 @@ module;
 
 #include <functional>
 #include <memory>
+#include <vector>
 
 export module tree_algorithms;
 
@@ -56,12 +57,38 @@ public:
     virtual void insert(const T&) = 0;
     virtual size_t count(const T&) = 0;
     virtual bool remove(const T&) = 0;
-    virtual void clear() = 0;
+    virtual void clear() final {
+        std::vector<TreeNode<T>*> stack;
+
+        if (m_root != nullptr) {
+            stack.push_back(m_root);
+        }
+
+        while (!stack.empty()) {
+            TreeNode<T> *node = stack.back();
+            stack.pop_back();
+
+            if (node->left != nullptr) {
+                stack.push_back(node->left);
+            }
+
+            if (node->right != nullptr) {
+                stack.push_back(node->right);
+            }
+
+            m_size--;
+            delete node;
+        }
+
+        m_root = nullptr;
+    }
 
     // BSTree<T, Comp, Alloc>::Iterator begin() const
     // BSTree<T, Comp, Alloc>::Iterator end() const
 
-    virtual ~BSTree() = default;
+    virtual ~BSTree() {
+        clear();
+    }
 
 protected:
     TreeNode<T> *m_root = nullptr;
@@ -92,36 +119,6 @@ public:
 
     bool remove(const T&) final override {
         return false;
-    }
-
-    void clear() final override {
-        std::vector<TreeNode<T>*> stack;
-
-        if (this->m_root != nullptr) {
-            stack.push_back(this->m_root);
-        }
-
-        while (!stack.empty()) {
-            TreeNode<T> *node = stack.back();
-            stack.pop_back();
-
-            if (node->left != nullptr) {
-                stack.push_back(node->left);
-            }
-
-            if (node->right != nullptr) {
-                stack.push_back(node->right);
-            }
-
-            this->m_size--;
-            delete node;
-        }
-
-        this->m_root = nullptr;
-    }
-
-    ~AVLTree() {
-        clear();
     }
 
 private:
