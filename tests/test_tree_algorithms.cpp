@@ -23,7 +23,7 @@ TEST(AVLTreeTest, BuildTreeFromPointer) {
 
     tree.build(items, 3);
 
-    for (int i = 0; i < n; i++) {
+    for (size_t i = 0; i < n; i++) {
         EXPECT_EQ(tree.count(items[i]), 1);
     }
 }

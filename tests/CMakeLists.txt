@@ -20,7 +20,7 @@ target_compile_features(${TEST_TARGET} PUBLIC cxx_std_20)
 
 
 # Add sanitizers
-enable_sanitizers(${TEST_TARGET})
+enable_sanitizers_and_strict_warnings(${TEST_TARGET})
 
 
 # TODO: use the set variable instead of hardcoding the library name
