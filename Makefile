@@ -5,6 +5,7 @@ install:
 	make install-llvm
 	make install-cmake
 	make install-ninja
+	make install-valgrind
 
 
 # Clang and LLVM
@@ -26,6 +27,12 @@ install-cmake:
 install-ninja:
 	sudo apt-get -y install ninja-build
 	ninja --version
+
+# Valgrind
+.PHONY: install-valgrind
+install-valgrind:
+	sudo apt-get -y install valgrind
+	valgrind --version
 
 
 # Build setup
@@ -49,7 +56,6 @@ config-local:
 .PHONY: build
 build:
 	cmake --build build
-
 
 
 # Executables
