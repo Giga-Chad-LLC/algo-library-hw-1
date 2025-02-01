@@ -18,6 +18,11 @@ add_executable(${TEST_TARGET}
 # Enable C++20
 target_compile_features(${TEST_TARGET} PUBLIC cxx_std_20)
 
+
+# Add sanitizers
+enable_sanitizers(${TEST_TARGET})
+
+
 # TODO: use the set variable instead of hardcoding the library name
 # Link our library and Google Test
 target_link_libraries(${TEST_TARGET} PRIVATE tree_algorithms gtest_main)

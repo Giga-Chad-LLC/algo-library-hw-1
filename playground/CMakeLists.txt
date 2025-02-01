@@ -8,5 +8,8 @@ add_executable(${PLAYGROUND_TARGET}
 # Enable C++20
 target_compile_features(${PLAYGROUND_TARGET} PUBLIC cxx_std_20)
 
+# Add sanitizers
+enable_sanitizers(${PLAYGROUND_TARGET})
+
 # Link our library
 target_link_libraries(${PLAYGROUND_TARGET} PRIVATE tree_algorithms)
