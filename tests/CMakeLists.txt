@@ -7,6 +7,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+
 # Define target name
 set(TEST_TARGET test_tree_algorithms)
 
@@ -28,8 +29,12 @@ enable_sanitizers_and_strict_warnings(${TEST_TARGET})
 target_link_libraries(${TEST_TARGET} PRIVATE tree_algorithms gtest_main)
 
 # Enable testing
+include(CTest)
 include(GoogleTest)
 gtest_discover_tests(${TEST_TARGET})
+
+
+add_test(tests ${TEST_TARGET})
 
 
 # Add Valgrind options
@@ -41,7 +46,7 @@ if (VALGRIND_EXECUTABLE)
     set(VALGRIND_FLAGS "--leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1")
 
     # Wrap tests with Valgrind
-    set_tests_properties(${TEST_TARGET}
+    set_tests_properties(tests
         PROPERTIES
         ENVIRONMENT "GTEST_COLOR=1"
         COMMAND ${VALGRIND_COMMAND} ${VALGRIND_FLAGS} $<TARGET_FILE:${TEST_TARGET}>
