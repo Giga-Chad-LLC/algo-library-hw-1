@@ -30,3 +30,22 @@ target_link_libraries(${TEST_TARGET} PRIVATE tree_algorithms gtest_main)
 # Enable testing
 include(GoogleTest)
 gtest_discover_tests(${TEST_TARGET})
+
+
+# Add Valgrind options
+find_program(VALGRIND_EXECUTABLE valgrind)
+if (VALGRIND_EXECUTABLE)
+    message(STATUS "Valgrind found: ${VALGRIND_EXECUTABLE}")
+
+    set(VALGRIND_COMMAND "${VALGRIND_EXECUTABLE}")
+    set(VALGRIND_FLAGS "--leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1")
+
+    # Wrap tests with Valgrind
+    set_tests_properties(${TEST_TARGET}
+        PROPERTIES
+        ENVIRONMENT "GTEST_COLOR=1"
+        COMMAND ${VALGRIND_COMMAND} ${VALGRIND_FLAGS} $<TARGET_FILE:${TEST_TARGET}>
+    )
+else()
+    message(WARNING "Valgrind not found; tests will run without Valgrind.")
+endif()
