@@ -45,6 +45,21 @@ TEST(AVLTreeTest, InsertIntoEmptyTree) {
 }
 
 
+TEST(AVLTreeTest, InsertItems) {
+    trees::AVLTree<int> tree;
+
+    const int n = 1000;
+
+    for (int i = 0; i < n; i++) {
+        tree.insert(i);
+    }
+
+    for (int i = 0; i < n; i++) {
+        EXPECT_EQ(tree.count(i), 1);
+    }
+}
+
+
 TEST(AVLTreeTest, InsertDuplicates) {
     trees::AVLTree<int> tree;
 
@@ -78,3 +93,78 @@ TEST(AVLTreeTest, ClearTree) {
         EXPECT_EQ(tree.count(v), 0);
     }
 }
+
+
+TEST(AVLTreeTest, MultipleClear) {
+    trees::AVLTree<int> tree;
+    std::vector<int> items = {1, 2, 3};
+
+    for (int i = 0; i < 10; i++) {
+        for (int v : items) {
+            tree.insert(v);
+        }
+
+        tree.clear();
+        tree.clear();
+
+        for (int v : items) {
+            EXPECT_EQ(tree.count(v), 0);
+        }
+    }
+}
+
+
+TEST(AVLTreeTest, RemoveItems) {
+    trees::AVLTree<int> tree;
+
+    std::vector<int> items = {1, 2, 3};
+
+    for (int v : items) {
+        tree.insert(v);
+    }
+
+    for (int v : items) {
+        EXPECT_EQ(tree.count(v), 1);
+    }
+
+    for (int v : items) {
+        bool removed = tree.remove(v);
+        EXPECT_TRUE(removed);
+    }
+
+    for (int v : items) {
+        EXPECT_EQ(tree.count(v), 0);
+    }
+}
+
+
+TEST(AVLTreeTest, RemoveFromEmptyTree) {
+    trees::AVLTree<int> tree;
+    EXPECT_FALSE(tree.remove(12));
+}
+
+
+TEST(AVLTreeTest, RemoveDuplicates) {
+    trees::AVLTree<int> tree;
+
+    const int n = 10;
+
+    for (int i = 0; i < n; i++) {
+        tree.insert(1);
+        tree.insert(2);
+    }
+
+    EXPECT_EQ(tree.count(1), n);
+    EXPECT_EQ(tree.count(2), n);
+
+    for (int i = 0; i < n; i++) {
+        EXPECT_TRUE(tree.remove(1));
+        EXPECT_TRUE(tree.remove(2));
+
+        const int expected = n - i - 1;
+
+        EXPECT_EQ(tree.count(1), expected);
+        EXPECT_EQ(tree.count(2), expected);
+    }
+}
+
