@@ -17,7 +17,9 @@ target_sources(${LIBRARY_TARGET} PUBLIC
 target_sources(${LIBRARY_TARGET}
     PUBLIC
     FILE_SET CXX_MODULES FILES
-        ${PROJECT_SOURCE_DIR}/src/modules/BSTree.cpp
+        ${PROJECT_SOURCE_DIR}/src/modules/BSTree.ixx
+        # nodes
+        ${PROJECT_SOURCE_DIR}/src/modules/nodes/TreeNode.cpp
 )
 
 # Enable C++20 modules
