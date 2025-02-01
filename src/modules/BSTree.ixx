@@ -77,8 +77,79 @@ public:
         return 0;
     }
 
-    bool remove(const T&) final override {
-        return false;
+    bool remove(const T& value) final override {
+        TreeNode<T> **indirect = &(this->m_root);
+        std::vector<TreeNode<T>**> path;
+
+        while ((*indirect != nullptr) && (*indirect)->value != value) {
+            path.push_back(indirect);
+
+            if ((*indirect)->value > value) {
+                indirect = &((*indirect)->left);
+            }
+            else {
+                indirect = &((*indirect)->right);
+            }
+        }
+
+        if (*indirect == nullptr) {
+            // the value does not exist in tree
+            return false;
+        }
+        else {
+            path.push_back(indirect);
+        }
+
+        std::size_t index = path.size();
+
+        if (((*indirect)->left == nullptr) && ((*indirect)->right == nullptr)) {
+            // the node is leaf
+            delete *indirect;
+            *indirect = nullptr;
+            // pop the deleted node from path
+            path.pop_back();
+        }
+        else if ((*indirect)->right == nullptr) {
+            // only left child exists
+            TreeNode<T> *toRemove = *indirect;
+
+            (*indirect) = (*indirect)->left;
+            delete toRemove;
+
+            path.pop_back();
+        }
+        else {
+            // right child exists
+            TreeNode<T> **successor = &((*indirect)->right);
+
+            while ((*successor)->left != nullptr) {
+                path.push_back(successor);
+                successor = &((*successor)->left);
+            }
+
+            if (*successor == (*indirect)->right) {
+                (*successor)->left = (*indirect)->left;
+
+                TreeNode<T> *toRemove = *indirect;
+                *indirect = *successor;
+                delete toRemove;
+            }
+            else {
+                TreeNode<T> *tmp = *path.back(), *suc = *successor;
+
+                tmp->left = (*successor)->right;
+                suc->left = (*indirect)->left;
+                suc->right = (*indirect)->right;
+
+                delete *indirect;
+                *indirect = suc;
+                path[index] = &(suc->right);
+            }
+        }
+
+        balance(path);
+        this->m_size--;
+        return true;
     }
 
     void clear() final override {
