@@ -19,9 +19,63 @@ public:
     virtual void build(const T* items, size_t n) = 0;
 
     virtual void insert(const T&) = 0;
-    virtual size_t count(const T&) = 0;
+
+    virtual size_t count(const T& value) {
+        // TODO: this implementation is too slow!
+        std::vector<TreeNode<T>*> stack;
+
+        if (this->m_root != nullptr) {
+            stack.push_back(this->m_root);
+        }
+
+        size_t answer = 0;
+
+        while (!stack.empty()) {
+            TreeNode<T> *node = stack.back();
+            stack.pop_back();
+
+            if (node->value == value) {
+                ++answer;
+            }
+
+            if (node->left != nullptr) {
+                stack.push_back(node->left);
+            }
+            if (node->right != nullptr) {
+                stack.push_back(node->right);
+            }
+        }
+
+        return answer;
+    }
+
     virtual bool remove(const T&) = 0;
-    virtual void clear() = 0;
+
+    virtual void clear() {
+        std::vector<TreeNode<T>*> stack;
+
+        if (this->m_root != nullptr) {
+            stack.push_back(this->m_root);
+        }
+
+        while (!stack.empty()) {
+            TreeNode<T> *node = stack.back();
+            stack.pop_back();
+
+            if (node->left != nullptr) {
+                stack.push_back(node->left);
+            }
+
+            if (node->right != nullptr) {
+                stack.push_back(node->right);
+            }
+
+            this->m_size--;
+            delete node;
+        }
+
+        this->m_root = nullptr;
+    }
 
     // BSTree<T, Comp, Alloc>::Iterator begin() const
     // BSTree<T, Comp, Alloc>::Iterator end() const
@@ -71,35 +125,6 @@ public:
 
         balance(path);
         this->m_size++;
-    }
-
-    size_t count(const T& value) final override {
-        // TODO: this implementation is too slow!
-        std::vector<TreeNode<T>*> stack;
-
-        if (this->m_root != nullptr) {
-            stack.push_back(this->m_root);
-        }
-
-        size_t answer = 0;
-
-        while (!stack.empty()) {
-            TreeNode<T> *node = stack.back();
-            stack.pop_back();
-
-            if (node->value == value) {
-                ++answer;
-            }
-
-            if (node->left != nullptr) {
-                stack.push_back(node->left);
-            }
-            if (node->right != nullptr) {
-                stack.push_back(node->right);
-            }
-        }
-
-        return answer;
     }
 
     bool remove(const T& value) final override {
@@ -177,34 +202,8 @@ public:
         return true;
     }
 
-    void clear() final override {
-        std::vector<TreeNode<T>*> stack;
-
-        if (this->m_root != nullptr) {
-            stack.push_back(this->m_root);
-        }
-
-        while (!stack.empty()) {
-            TreeNode<T> *node = stack.back();
-            stack.pop_back();
-
-            if (node->left != nullptr) {
-                stack.push_back(node->left);
-            }
-
-            if (node->right != nullptr) {
-                stack.push_back(node->right);
-            }
-
-            this->m_size--;
-            delete node;
-        }
-
-        this->m_root = nullptr;
-    }
-
     ~AVLTree() {
-        clear();
+        this->clear();
     }
 
 private:
