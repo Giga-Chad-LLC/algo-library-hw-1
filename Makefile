@@ -2,6 +2,7 @@
 .PHONY: install
 install:
 	sudo apt-get -y update
+	sudo apt-get install -y wget lsb-release software-properties-common
 	make install-llvm
 	make install-cmake
 	make install-ninja
@@ -13,7 +14,7 @@ install:
 install-llvm:
 	wget https://apt.llvm.org/llvm.sh
 	chmod +x llvm.sh
-	sudo ./llvm.sh --version=19
+	sudo ./llvm.sh 19
 	clang++ --version
 
 # CMake
