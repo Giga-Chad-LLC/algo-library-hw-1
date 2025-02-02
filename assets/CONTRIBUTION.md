@@ -12,8 +12,7 @@
         > See the cmake-cxxmodules(7) manual for details
 
     1. Компиляторы:
-        1. clang `>=17` (лучше `>=19`);
-        1. gcc `>=14`.
+        1. clang `>=19`.
 
 ### Установка под Mac через Homebrew:
 
