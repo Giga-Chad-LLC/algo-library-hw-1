@@ -7,7 +7,7 @@
     1. CMake версии `>=3.28`. В качестве build-генераторы необходимо использовать на выбор:
         1. Ninja `>=1.11`;
         1. Ninja Multi-Config
-        1. Visual Studio 2022б toolset версии `>=19.34` (можно попробовать `>=17.4`);
+        1. Visual Studio 2022, toolset версии `>=19.34` (можно попробовать `>=17.4`);
         1. **Unix Makefiles не поддерживают C++20 модули!**
         > See the cmake-cxxmodules(7) manual for details
 
