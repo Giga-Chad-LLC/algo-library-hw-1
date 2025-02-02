@@ -22,6 +22,8 @@ install-llvm:
 	sudo update-alternatives --set clang /usr/bin/clang-19
 	sudo update-alternatives --set clang++ /usr/bin/clang++-19
 	clang++ --version
+	sudo apt-get install clang-tools-19
+	clang-scan-deps --version
 
 # CMake
 .PHONY: install-cmake
