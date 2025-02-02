@@ -15,6 +15,7 @@ install-llvm:
 	wget https://apt.llvm.org/llvm.sh
 	chmod +x llvm.sh
 	sudo ./llvm.sh 19
+	sudo apt-get install clang-tools-19
 	sudo update-alternatives --remove-all clang || true
 	sudo update-alternatives --remove-all clang++ || true
 	sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 100
@@ -22,8 +23,6 @@ install-llvm:
 	sudo update-alternatives --set clang /usr/bin/clang-19
 	sudo update-alternatives --set clang++ /usr/bin/clang++-19
 	clang++ --version
-	sudo apt-get install clang-tools-19
-	clang-scan-deps --version
 
 # CMake
 .PHONY: install-cmake
