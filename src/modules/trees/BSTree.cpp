@@ -16,6 +16,9 @@ using namespace nodes;
 export template<typename T, typename Comp = std::less<T>, typename Alloc = std::allocator<T>>
 class BSTree {
 public:
+    BSTree(Comp comparator, Alloc allocator)
+        : m_comparator(comparator), m_allocator(allocator) {}
+
     virtual void build(const T* items, size_t n) = 0;
 
     virtual void insert(const T&) = 0;
@@ -71,7 +74,8 @@ public:
             }
 
             this->m_size--;
-            delete node;
+            // delete node;
+            destroy(node);
         }
 
         this->m_root = nullptr;
@@ -83,8 +87,30 @@ public:
     virtual ~BSTree() = default;
 
 protected:
+    template<typename NodeType, typename NodeAllocType>
+    NodeType* create(NodeAllocType& node_alloc, const T& value) {
+        using NodeAllocTraits = std::allocator_traits<NodeAllocType>;
+
+        NodeType* node = NodeAllocTraits::allocate(node_alloc, 1);
+        NodeAllocTraits::construct(node_alloc, node, value);
+        return node;
+    }
+
+    template<typename NodeType, typename NodeAllocType>
+    void destroy(NodeAllocType& node_alloc, NodeType* node) {
+        using NodeAllocTraits = std::allocator_traits<NodeAllocType>;
+
+        NodeAllocTraits::destroy(node_alloc, node);
+        NodeAllocTraits::deallocate(node_alloc, node, 1);
+    }
+
+    virtual TreeNode<T>* create(const T& value) = 0;
+    virtual void destroy(TreeNode<T>* node) = 0;
+
     size_t m_size = 0;
     TreeNode<T> *m_root = nullptr;
+    Comp m_comparator;
+    Alloc m_allocator;
 };
 
 }

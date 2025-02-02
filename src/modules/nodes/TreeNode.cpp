@@ -11,6 +11,7 @@ namespace trees::nodes {
 template <class T>
 struct TreeNode {
     TreeNode(T value) : value(std::move(value)) {}
+    virtual ~TreeNode() = default;
 
     TreeNode *left = nullptr;
     TreeNode *right = nullptr;

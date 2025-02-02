@@ -24,48 +24,66 @@ using namespace nodes;
  * Implementation taken from: https://github.com/KadirEmreOto/AVL-Tree
  */
 export template<typename T, typename Comp = std::less<T>, typename Alloc = std::allocator<T>>
-class AVLTree : public BSTree<T, Comp, Alloc> {
+class AVLTree final : public BSTree<T, Comp, Alloc> {
+    using NodeAllocatorType = typename std::allocator_traits<Alloc>::template rebind_alloc<AVLTreeNode<T>>;
+
 public:
-    void build(const T* items, size_t n) final override {
+    AVLTree(Comp comparator = Comp{}, Alloc allocator = Alloc{})
+        : BSTree<T, Comp, Alloc>(comparator, allocator),
+        m_node_allocator(this->m_allocator) {}
+
+    void build(const T* items, size_t n) override {
         for (size_t i = 0; i < n; i++) {
             insert(items[i]);
         }
     }
 
-    void insert(const T& value) final override {
+    void insert(const T& value) override {
         TreeNode<T> **indirect = &(this->m_root);
         std::vector<TreeNode<T>**> path;
 
         while (*indirect != nullptr) {
             path.push_back(indirect);
 
-            if ((*indirect)->value > value) {
-                indirect = &((*indirect)->left);
+            // if ((*indirect)->value > value) {
+            //     indirect = &((*indirect)->left);
+            // }
+            // else {
+            //     indirect = &((*indirect)->right);
+            // }
+            if (this->m_comparator((*indirect)->value, value)) {
+                indirect = &((*indirect)->right);
             }
             else {
-                indirect = &((*indirect)->right);
+                indirect = &((*indirect)->left);
             }
         }
 
-        *indirect = new AVLTreeNode<T>(value);
+        *indirect = create(value);
         path.push_back(indirect);
 
         balance(path);
         this->m_size++;
     }
 
-    bool remove(const T& value) final override {
+    bool remove(const T& value) override {
         TreeNode<T> **indirect = &(this->m_root);
         std::vector<TreeNode<T>**> path;
 
         while ((*indirect != nullptr) && (*indirect)->value != value) {
             path.push_back(indirect);
 
-            if ((*indirect)->value > value) {
-                indirect = &((*indirect)->left);
+            // if ((*indirect)->value > value) {
+            //     indirect = &((*indirect)->left);
+            // }
+            // else {
+            //     indirect = &((*indirect)->right);
+            // }
+            if (this->m_comparator((*indirect)->value, value)) {
+                indirect = &((*indirect)->right);
             }
             else {
-                indirect = &((*indirect)->right);
+                indirect = &((*indirect)->left);
             }
         }
 
@@ -81,7 +99,7 @@ public:
 
         if (((*indirect)->left == nullptr) && ((*indirect)->right == nullptr)) {
             // the node is leaf
-            delete *indirect;
+            destroy(*indirect);
             *indirect = nullptr;
             // pop the deleted node from path
             path.pop_back();
@@ -91,8 +109,7 @@ public:
             TreeNode<T> *toRemove = *indirect;
 
             (*indirect) = (*indirect)->left;
-            delete toRemove;
-
+            destroy(toRemove);
             path.pop_back();
         }
         else {
@@ -109,7 +126,7 @@ public:
 
                 TreeNode<T> *toRemove = *indirect;
                 *indirect = *successor;
-                delete toRemove;
+                destroy(toRemove);
             }
             else {
                 TreeNode<T> *tmp = *path.back(), *suc = *successor;
@@ -118,7 +135,7 @@ public:
                 suc->left = (*indirect)->left;
                 suc->right = (*indirect)->right;
 
-                delete *indirect;
+                destroy(*indirect);
                 *indirect = suc;
                 path[index] = &(suc->right);
             }
@@ -165,6 +182,16 @@ private:
             }
         }
     }
+
+    TreeNode<T>* create(const T& value) override {
+        return this->BSTree<T, Comp, Alloc>::template create<AVLTreeNode<T>>(m_node_allocator, value);
+    }
+
+    void destroy(TreeNode<T>* node) override {
+        this->BSTree<T, Comp, Alloc>::template destroy<AVLTreeNode<T>>(m_node_allocator, static_cast<AVLTreeNode<T>*>(node));
+    }
+
+    NodeAllocatorType m_node_allocator;
 };
 
 }

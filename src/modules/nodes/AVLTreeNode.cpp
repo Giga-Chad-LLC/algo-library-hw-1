@@ -13,6 +13,8 @@ namespace trees::nodes {
  */
 template <class T>
 struct AVLTreeNode : public TreeNode<T> {
+    using TreeNode<T>::TreeNode;
+
     void updateValues() {
         this->_count = this->size(this->left) + this->size(this->right) + 1;
         this->_height = std::max(this->height(this->left), this->height(this->right)) + 1;
