@@ -37,7 +37,7 @@ public:
             TreeNode<T> *node = stack.back();
             stack.pop_back();
 
-            if (node->value == value) {
+            if (!m_comparator(node->value, value) && !m_comparator(value, node->value)) {
                 ++answer;
             }
 
@@ -74,7 +74,6 @@ public:
             }
 
             this->m_size--;
-            // delete node;
             destroy(node);
         }
 

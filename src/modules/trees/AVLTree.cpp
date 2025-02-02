@@ -45,12 +45,6 @@ public:
         while (*indirect != nullptr) {
             path.push_back(indirect);
 
-            // if ((*indirect)->value > value) {
-            //     indirect = &((*indirect)->left);
-            // }
-            // else {
-            //     indirect = &((*indirect)->right);
-            // }
             if (this->m_comparator((*indirect)->value, value)) {
                 indirect = &((*indirect)->right);
             }
@@ -73,12 +67,6 @@ public:
         while ((*indirect != nullptr) && (*indirect)->value != value) {
             path.push_back(indirect);
 
-            // if ((*indirect)->value > value) {
-            //     indirect = &((*indirect)->left);
-            // }
-            // else {
-            //     indirect = &((*indirect)->right);
-            // }
             if (this->m_comparator((*indirect)->value, value)) {
                 indirect = &((*indirect)->right);
             }
