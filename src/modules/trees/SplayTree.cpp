@@ -35,6 +35,8 @@ public:
     this->m_root = nullptr;
   }
 
+  // TODO: height & node count are not supported! remove them into to AVL
+
   void insert(const T& value) override {
     if (this->m_root == nullptr) {
       this->m_root = create(value);
