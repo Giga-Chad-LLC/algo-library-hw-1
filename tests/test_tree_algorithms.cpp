@@ -2,9 +2,27 @@
 #include <string>
 
 #include "TreeTester.h"
+#include "ParameterizedTreeTests.h"
+
 #include <gtest/gtest.h>
 
 import tree_algorithms;
+
+
+// define test suite parameterized by tree type `TreeImpl<T>`
+TYPED_TEST_SUITE(ParameterizedTreeTester, TreeTypeTemplates);
+
+
+TYPED_TEST(ParameterizedTreeTester, BuildEmptyTree) {
+    // Select the tree type and execute the test
+    trees::test::TreeTester<TestFixture::template TreeType>::BuildEmptyTree();
+}
+
+
+
+
+
+
 
 
 TEST(AVLTreeTest, BuildEmptyTree) {
