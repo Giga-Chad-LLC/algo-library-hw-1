@@ -39,7 +39,6 @@ public:
 
   void insert(const T& value) override {
     if (this->m_root == nullptr) {
-      // this->m_root = new TreeNode(x);
       this->m_root = create(value);
       return;
     }
@@ -48,10 +47,8 @@ public:
 
     // TODO: does not support multiple entrances of `value`
     while (curr != nullptr) {
-      // if (value < curr -> key) {
       if (this->m_comparator(value, curr->value)) {
         if (curr->left == nullptr) {
-          // TreeNode<T> *newNode = new TreeNode(x);
           auto* newNode = static_cast<SplayTreeNode<T>*>(create(value));
 
           curr->left = newNode;
@@ -63,10 +60,8 @@ public:
 
         curr = static_cast<SplayTreeNode<T>*>(curr->left);
       }
-      // else if (x > curr -> key) {
       else if (this->m_comparator(curr->value, value)) {
         if (curr->right == nullptr) {
-          // TreeNode<T> *newNode = new TreeNode(x);
           auto* newNode = static_cast<SplayTreeNode<T>*>(create(value));
 
           curr->right = newNode;
@@ -113,7 +108,6 @@ public:
       R->parent = M;
     }
 
-    // delete del;
     destroy(del);
     return true;
   }
@@ -131,11 +125,9 @@ private:
 
     while (curr != nullptr) {
       prev = curr;
-      // if (x < curr -> key) {
       if (this->m_comparator(value, curr->value)) {
         curr = static_cast<SplayTreeNode<T>*>(curr->left);
       }
-      // else if (x > curr -> key) {
       else if (this->m_comparator(curr->value, value)) {
         curr = static_cast<SplayTreeNode<T>*>(curr->right);
       }
