@@ -5,9 +5,7 @@
 module;
 
 #include <functional>
-#include <memory>
 #include <vector>
-#include <algorithm>
 
 export module tree_algorithms:SplayTree;
 import :BSTree;
@@ -47,7 +45,8 @@ public:
 
     // TODO: does not support multiple entrances of `value`
     while (curr != nullptr) {
-      if (this->m_comparator(value, curr->value)) {
+      // value <= curr.value
+      if (const bool greater = this->m_comparator(curr->value, value); !greater) {
         if (curr->left == nullptr) {
           auto* newNode = static_cast<SplayTreeNode<T>*>(create(value));
 
@@ -60,7 +59,8 @@ public:
 
         curr = static_cast<SplayTreeNode<T>*>(curr->left);
       }
-      else if (this->m_comparator(curr->value, value)) {
+      // value > curr.value
+      else {
         if (curr->right == nullptr) {
           auto* newNode = static_cast<SplayTreeNode<T>*>(create(value));
 
@@ -72,10 +72,6 @@ public:
         }
 
         curr = static_cast<SplayTreeNode<T>*>(curr->right);
-      }
-      else {
-        splay(curr);
-        return;
       }
     }
   }
@@ -136,15 +132,20 @@ private:
 
     while (curr != nullptr) {
       prev = curr;
-      if (this->m_comparator(value, curr->value)) {
+
+      // value <= curr.value
+      if (const bool greater = this->m_comparator(curr->value, value); !greater) {
+        // value >= curr.value
+        if (const bool less = this->m_comparator(value, curr->value); !less) {
+          // implies: value == curr.value
+          ret = curr;
+          break;
+        }
         curr = static_cast<SplayTreeNode<T>*>(curr->left);
       }
-      else if (this->m_comparator(curr->value, value)) {
-        curr = static_cast<SplayTreeNode<T>*>(curr->right);
-      }
+      // value > curr.value
       else {
-        ret = curr;
-        break;
+        curr = static_cast<SplayTreeNode<T>*>(curr->right);
       }
     }
 
