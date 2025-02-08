@@ -37,6 +37,9 @@ gtest_discover_tests(${TEST_TARGET})
 
 add_test(tests ${TEST_TARGET})
 
+target_sources(${TEST_TARGET} PUBLIC
+    ${PROJECT_SOURCE_DIR}/tests/components/ExecutionTimer/ExecutionTimer.cpp
+)
 
 # Add Valgrind options
 find_program(VALGRIND_EXECUTABLE valgrind)
