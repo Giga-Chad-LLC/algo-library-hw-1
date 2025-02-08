@@ -108,6 +108,17 @@ public:
       R->parent = M;
     }
 
+    // detach `del` from its parent if it wasn't root
+    if (del->parent != nullptr) {
+      if (del->parent->left == del) {
+        del->parent->left = nullptr;
+      }
+      else if (del->parent->right == del) {
+        del->parent->right = nullptr;
+      }
+      del->parent = nullptr;
+    }
+
     destroy(del);
     return true;
   }
