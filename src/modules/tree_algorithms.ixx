@@ -10,3 +10,4 @@ export module tree_algorithms;
 // trees
 export import :BSTree;
 export import :AVLTree;
+export import :SplayTree;
