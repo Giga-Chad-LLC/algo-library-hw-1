@@ -39,6 +39,7 @@ public:
 
     TreeNode<T> *curr = this->m_root;
 
+    // TODO: does not support multiple entrances of `value`
     while (curr != nullptr) {
       // if (value < curr -> key) {
       if (this->m_comparator(value, curr->value)) {
@@ -61,8 +62,8 @@ public:
           // TreeNode<T> *newNode = new TreeNode(x);
           TreeNode<T> *newNode = create(value);
 
-          curr -> right = newNode;
-          newNode -> parent = curr;
+          curr->right = newNode;
+          newNode->parent = curr;
 
           splay(newNode);
           return;
@@ -78,7 +79,36 @@ public:
   }
 
   bool remove(const T& value) override {
-    return false;
+    SplayTreeNode<T>* del = find(value);
+    if (del == nullptr) {
+      return false;
+    }
+
+    auto* L = static_cast<SplayTreeNode<T>*>(del->left);
+    auto* R = static_cast<SplayTreeNode<T>*>(del->right);
+
+    if (L == nullptr && R == nullptr) {
+      this -> root = nullptr;
+    }
+    else if (L == nullptr) {
+      SplayTreeNode<T>* M = subtree_min(R);
+      splay(M);
+    }
+    else if (R == nullptr) {
+      SplayTreeNode<T>* M = subtree_max(L);
+      splay(M);
+    }
+    else {
+      SplayTreeNode<T>* M = subtree_max(L);
+      splay(M);
+
+      M->right = R;
+      R->parent = M;
+    }
+
+    // delete del;
+    destroy(del);
+    return true;
   }
 
 
@@ -87,7 +117,55 @@ public:
   }
 
 private:
-  // TODO: too much copy-paste in if-else branches, refactor
+  SplayTreeNode<T>* find(const T& value) {
+    SplayTreeNode<T>* ret = nullptr;
+    SplayTreeNode<T>* curr = this->m_root;
+    SplayTreeNode<T>* prev = nullptr;
+
+    while (curr != nullptr) {
+      prev = curr;
+      // if (x < curr -> key) {
+      if (this->m_comparator(value, curr->value)) {
+        curr = curr->left;
+      }
+      // else if (x > curr -> key) {
+      else if (this->m_comparator(curr->value, value)) {
+        curr = curr->right;
+      }
+      else {
+        ret = curr;
+        break;
+      }
+    }
+
+    if (ret != nullptr) {
+      splay(ret);
+    }
+    else if (prev != nullptr) {
+      splay(prev);
+    }
+
+    return ret;
+  }
+
+  SplayTreeNode<T>* subtree_max(SplayTreeNode<T>* subRoot) {
+    SplayTreeNode<T>* curr = subRoot;
+    while (curr->right != nullptr) {
+      curr = curr->right;
+    }
+    return curr;
+  }
+
+  SplayTreeNode<T>* subtree_min(SplayTreeNode<T>* subRoot) {
+    SplayTreeNode<T>* curr = subRoot;
+    while (curr->left != nullptr) {
+      curr = curr->left;
+    }
+    return curr;
+  }
+
+
+  // TODO: too much copy-paste in if-else branches of zig/zags, refactor
 
   void zig(SplayTreeNode<T>* x) {
     auto* p = static_cast<SplayTreeNode<T>*>(x->parent);
