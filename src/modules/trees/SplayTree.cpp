@@ -19,6 +19,13 @@ namespace trees {
 
 using namespace nodes;
 
+
+/**
+ * An efficient self-balancing implementation of a binary search tree.
+ * Complexity: `O(log N)` amortized for all operations.
+ *
+ * Credits: https://github.com/PetarV-/Algorithms/blob/master/Data%20Structures/Splay%20Tree.cpp
+ */
 export template<typename T, typename Comp = std::less<T>, typename Alloc = std::allocator<T>>
 class SplayTree final : public BSTree<T, Comp, Alloc> {
   using NodeAllocatorType = typename std::allocator_traits<Alloc>::template rebind_alloc<SplayTreeNode<T>>;
