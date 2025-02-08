@@ -10,13 +10,15 @@
 import tree_algorithms;
 
 
-template <typename TreeType>
-class ParameterizedTreeTests : public ::testing::Test {};
-
 // Define the tree types to test (extend this list as needed)
 // NOTE: extend these templates according to support testing for other tree types
 template <typename T> using AVLTreeType = trees::AVLTree<T>;
 template <typename T> using SplayTreeType = trees::SplayTree<T>;
+
+
+
+template <typename TreeType>
+class ParameterizedTreeTests : public ::testing::Test {};
 
 
 template <template <typename> class TreeTemplate>
