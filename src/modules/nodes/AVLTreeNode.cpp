@@ -12,7 +12,7 @@ namespace trees::nodes {
  * Implementation taken from: https://github.com/KadirEmreOto/AVL-Tree
  */
 template <class T>
-struct AVLTreeNode : public TreeNode<T> {
+struct AVLTreeNode final : public TreeNode<T> {
     using TreeNode<T>::TreeNode;
 
     void updateValues() {
