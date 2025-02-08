@@ -18,58 +18,46 @@ TYPED_TEST(ParameterizedTreeTester, BuildEmptyTree) {
     trees::test::TreeTester<TestFixture::template TreeType>::BuildEmptyTree();
 }
 
-
-
-
-
-
-
-
-TEST(AVLTreeTest, BuildEmptyTree) {
-    trees::test::TreeTester<trees::AVLTree>::BuildEmptyTree();
+TYPED_TEST(ParameterizedTreeTester, BuildTreeFromPointer) {
+    trees::test::TreeTester<TestFixture::template TreeType>::BuildTreeFromPointer();
 }
 
 
-TEST(AVLTreeTest, BuildTreeFromPointer) {
-    trees::test::TreeTester<trees::AVLTree>::BuildTreeFromPointer();
+TYPED_TEST(ParameterizedTreeTester, InsertIntoEmptyTree) {
+    trees::test::TreeTester<TestFixture::template TreeType>::InsertIntoEmptyTree();
 }
 
 
-TEST(AVLTreeTest, InsertIntoEmptyTree) {
-    trees::test::TreeTester<trees::AVLTree>::InsertIntoEmptyTree();
+TYPED_TEST(ParameterizedTreeTester, InsertItems) {
+    trees::test::TreeTester<TestFixture::template TreeType>::InsertItems();
 }
 
 
-TEST(AVLTreeTest, InsertItems) {
-    trees::test::TreeTester<trees::AVLTree>::InsertItems();
+TYPED_TEST(ParameterizedTreeTester, InsertDuplicates) {
+    trees::test::TreeTester<TestFixture::template TreeType>::InsertDuplicates();
+}
+
+TYPED_TEST(ParameterizedTreeTester, ClearTree) {
+    trees::test::TreeTester<TestFixture::template TreeType>::ClearTree();
 }
 
 
-TEST(AVLTreeTest, InsertDuplicates) {
-    trees::test::TreeTester<trees::AVLTree>::InsertDuplicates();
-}
-
-TEST(AVLTreeTest, ClearTree) {
-    trees::test::TreeTester<trees::AVLTree>::ClearTree();
+TYPED_TEST(ParameterizedTreeTester, MultipleClear) {
+    trees::test::TreeTester<TestFixture::template TreeType>::MultipleClear();
 }
 
 
-TEST(AVLTreeTest, MultipleClear) {
-    trees::test::TreeTester<trees::AVLTree>::MultipleClear();
+TYPED_TEST(ParameterizedTreeTester, RemoveItems) {
+    trees::test::TreeTester<TestFixture::template TreeType>::RemoveItems();
 }
 
 
-TEST(AVLTreeTest, RemoveItems) {
-    trees::test::TreeTester<trees::AVLTree>::RemoveItems();
+TYPED_TEST(ParameterizedTreeTester, RemoveFromEmptyTree) {
+    trees::test::TreeTester<TestFixture::template TreeType>::RemoveFromEmptyTree();
 }
 
 
-TEST(AVLTreeTest, RemoveFromEmptyTree) {
-    trees::test::TreeTester<trees::AVLTree>::RemoveFromEmptyTree();
-}
-
-
-TEST(AVLTreeTest, RemoveDuplicates) {
-    trees::test::TreeTester<trees::AVLTree>::RemoveDuplicates();
+TYPED_TEST(ParameterizedTreeTester, RemoveDuplicates) {
+    trees::test::TreeTester<TestFixture::template TreeType>::RemoveDuplicates();
 }
 
