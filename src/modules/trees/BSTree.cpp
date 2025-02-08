@@ -62,6 +62,7 @@ public:
             TreeNode<T> *node = stack.back();
             stack.pop_back();
 
+            // equivalent to: node.value == value
             if (!m_comparator(node->value, value) && !m_comparator(value, node->value)) {
                 ++answer;
             }
@@ -98,7 +99,7 @@ public:
                 stack.push_back(node->right);
             }
 
-            this->m_size--;
+            --this->m_size;
             destroy(node);
         }
 

@@ -28,7 +28,7 @@ class AVLTree final : public BSTree<T, Comp, Alloc> {
     using NodeAllocatorType = typename std::allocator_traits<Alloc>::template rebind_alloc<AVLTreeNode<T>>;
 
 public:
-    AVLTree(Comp comparator = Comp{}, Alloc allocator = Alloc{})
+    explicit AVLTree(Comp comparator = Comp{}, Alloc allocator = Alloc{})
         : BSTree<T, Comp, Alloc>(comparator, allocator),
         m_node_allocator(this->m_allocator) {}
 
@@ -57,7 +57,7 @@ public:
         path.push_back(indirect);
 
         balance(path);
-        this->m_size++;
+        ++this->m_size;
     }
 
     bool remove(const T& value) override {
@@ -92,7 +92,7 @@ public:
         std::size_t index = path.size();
 
         if (((*indirect)->left == nullptr) && ((*indirect)->right == nullptr)) {
-            // the node is leaf
+            // the node is a leaf
             destroy(*indirect);
             *indirect = nullptr;
             // pop the deleted node from path
@@ -136,11 +136,11 @@ public:
         }
 
         balance(path);
-        this->m_size--;
+        --this->m_size;
         return true;
     }
 
-    ~AVLTree() {
+    ~AVLTree() override {
         this->clear();
     }
 
@@ -149,10 +149,10 @@ private:
         std::reverse(path.begin(), path.end());
 
         for (TreeNode<T>** indirect : path) {
-            AVLTreeNode<T>* node = static_cast<AVLTreeNode<T>*>(*indirect);
+            auto* node = static_cast<AVLTreeNode<T>*>(*indirect);
 
-            AVLTreeNode<T>* left = static_cast<AVLTreeNode<T>*>(node->left);
-            AVLTreeNode<T>* right = static_cast<AVLTreeNode<T>*>(node->right);
+            auto* left = static_cast<AVLTreeNode<T>*>(node->left);
+            auto* right = static_cast<AVLTreeNode<T>*>(node->right);
 
             node->updateValues();
 
