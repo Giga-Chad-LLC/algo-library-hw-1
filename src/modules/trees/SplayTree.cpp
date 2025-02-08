@@ -30,7 +30,52 @@ public:
     this->m_root = nullptr;
   }
 
-  void insert(const T& value) override {}
+  void insert(const T& value) override {
+    if (this->m_root == nullptr) {
+      // this->m_root = new TreeNode(x);
+      this->m_root = create(value);
+      return;
+    }
+
+    TreeNode<T> *curr = this->m_root;
+
+    while (curr != nullptr) {
+      // if (value < curr -> key) {
+      if (this->m_comparator(value, curr->value)) {
+        if (curr->left == nullptr) {
+          // TreeNode<T> *newNode = new TreeNode(x);
+          TreeNode<T> *newNode = create(value);
+
+          curr->left = newNode;
+          newNode->parent = curr;
+
+          splay(newNode);
+          return;
+        }
+
+        curr = curr->left;
+      }
+      // else if (x > curr -> key) {
+      else if (this->m_comparator(curr->value, value)) {
+        if (curr->right == nullptr) {
+          // TreeNode<T> *newNode = new TreeNode(x);
+          TreeNode<T> *newNode = create(value);
+
+          curr -> right = newNode;
+          newNode -> parent = curr;
+
+          splay(newNode);
+          return;
+        }
+
+        curr = curr -> right;
+      }
+      else {
+        splay(curr);
+        return;
+      }
+    }
+  }
 
   bool remove(const T& value) override {
     return false;
