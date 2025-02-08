@@ -44,7 +44,7 @@ public:
       return;
     }
 
-    TreeNode<T> *curr = this->m_root;
+    auto* curr = static_cast<SplayTreeNode<T>*>(this->m_root);
 
     // TODO: does not support multiple entrances of `value`
     while (curr != nullptr) {
@@ -52,7 +52,7 @@ public:
       if (this->m_comparator(value, curr->value)) {
         if (curr->left == nullptr) {
           // TreeNode<T> *newNode = new TreeNode(x);
-          TreeNode<T> *newNode = create(value);
+          auto* newNode = static_cast<SplayTreeNode<T>*>(create(value));
 
           curr->left = newNode;
           newNode->parent = curr;
@@ -61,13 +61,13 @@ public:
           return;
         }
 
-        curr = curr->left;
+        curr = static_cast<SplayTreeNode<T>*>(curr->left);
       }
       // else if (x > curr -> key) {
       else if (this->m_comparator(curr->value, value)) {
         if (curr->right == nullptr) {
           // TreeNode<T> *newNode = new TreeNode(x);
-          TreeNode<T> *newNode = create(value);
+          auto* newNode = static_cast<SplayTreeNode<T>*>(create(value));
 
           curr->right = newNode;
           newNode->parent = curr;
@@ -76,7 +76,7 @@ public:
           return;
         }
 
-        curr = curr -> right;
+        curr = static_cast<SplayTreeNode<T>*>(curr->right);
       }
       else {
         splay(curr);
@@ -95,7 +95,7 @@ public:
     auto* R = static_cast<SplayTreeNode<T>*>(del->right);
 
     if (L == nullptr && R == nullptr) {
-      this -> root = nullptr;
+      this->m_root = nullptr;
     }
     else if (L == nullptr) {
       SplayTreeNode<T>* M = subtree_min(R);
@@ -126,18 +126,18 @@ public:
 private:
   SplayTreeNode<T>* find(const T& value) {
     SplayTreeNode<T>* ret = nullptr;
-    SplayTreeNode<T>* curr = this->m_root;
+    auto* curr = static_cast<SplayTreeNode<T>*>(this->m_root);
     SplayTreeNode<T>* prev = nullptr;
 
     while (curr != nullptr) {
       prev = curr;
       // if (x < curr -> key) {
       if (this->m_comparator(value, curr->value)) {
-        curr = curr->left;
+        curr = static_cast<SplayTreeNode<T>*>(curr->left);
       }
       // else if (x > curr -> key) {
       else if (this->m_comparator(curr->value, value)) {
-        curr = curr->right;
+        curr = static_cast<SplayTreeNode<T>*>(curr->right);
       }
       else {
         ret = curr;
@@ -158,7 +158,7 @@ private:
   SplayTreeNode<T>* subtree_max(SplayTreeNode<T>* subRoot) {
     SplayTreeNode<T>* curr = subRoot;
     while (curr->right != nullptr) {
-      curr = curr->right;
+      curr = static_cast<SplayTreeNode<T>*>(curr->right);
     }
     return curr;
   }
@@ -166,7 +166,7 @@ private:
   SplayTreeNode<T>* subtree_min(SplayTreeNode<T>* subRoot) {
     SplayTreeNode<T>* curr = subRoot;
     while (curr->left != nullptr) {
-      curr = curr->left;
+      curr = static_cast<SplayTreeNode<T>*>(curr->left);
     }
     return curr;
   }
