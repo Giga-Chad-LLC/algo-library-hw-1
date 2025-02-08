@@ -148,5 +148,5 @@ TEST(TreesBenchmark, MeasureExecutionTimes) {
     }
 
     std::cout << report.str() << std::endl;
-    report.dump("/Users/Vladislav.Artiukhov/dev/education/courses/software-engineering-2025/assignment-1/report.txt");
+    // report.dump("report.txt");
 }
