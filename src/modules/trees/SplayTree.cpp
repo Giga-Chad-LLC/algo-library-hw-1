@@ -43,7 +43,6 @@ public:
 
     auto* curr = static_cast<SplayTreeNode<T>*>(this->m_root);
 
-    // TODO: does not support multiple entrances of `value`
     while (curr != nullptr) {
       // value <= curr.value
       if (const bool greater = this->m_comparator(curr->value, value); !greater) {
