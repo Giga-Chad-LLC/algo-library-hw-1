@@ -4,6 +4,7 @@
 
 #include "components/TreeTester.h"
 #include "components/ParameterizedTreeTests.h"
+#include "components/Report/Report.h"
 
 #include <gtest/gtest.h>
 #include <__random/random_device.h>
@@ -88,6 +89,7 @@ TEST(TreesBenchmark, MeasureExecutionTimes) {
 
 
     trees::testing::ExecutionTimer timer;
+    trees::testing::Report report;
 
     // Insert/Remove operations based on parity of generated numbers
     for (auto& [name, tree] : trees) {
@@ -113,7 +115,7 @@ TEST(TreesBenchmark, MeasureExecutionTimes) {
             }
         }
         const long double elapsedTotal = timer.finish(name);
-
+        /*
         std::cout << "=== Report for '" << name << "' ===" << std::endl;
         std::cout << "Operations total: " << n << std::endl;
         std::cout << "\tInsert: " << insertCount << std::endl;
@@ -127,5 +129,24 @@ TEST(TreesBenchmark, MeasureExecutionTimes) {
         std::cout << "Total remove time: " << elapsedRemove << "ms, "
                   << "Average remove time: " << elapsedRemove / static_cast<double>(removeCount) << "ms" << std::endl;
         std::cout << std::endl;
+        */
+
+        report << "=== Report for '" << name << "' ===\n";
+        report << "Operations total: " << n << "\n";
+        report << "\tInsert: " << insertCount << "\n";
+        report << "\tRemove: " << removeCount << "\n";
+
+        report << "Total time: " << elapsedTotal << "ms\n";
+
+        report << "Total insert time: " << elapsedInsert << "ms, "
+                  << "Average insert time: " << elapsedInsert / static_cast<double>(insertCount) << "ms\n";
+
+        report << "Total remove time: " << elapsedRemove << "ms, "
+                  << "Average remove time: " << elapsedRemove / static_cast<double>(removeCount) << "ms\n";
+
+        report << "\n";
     }
+
+    std::cout << report.str() << std::endl;
+    report.dump("/Users/Vladislav.Artiukhov/dev/education/courses/software-engineering-2025/assignment-1/report.txt");
 }
