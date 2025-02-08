@@ -21,7 +21,7 @@ public:
         TreeType<int> tree;
 
         int items[] = {1, 2, 3};
-        const size_t n = sizeof(items) / sizeof(items[0]);
+        constexpr size_t n = std::size(items);
 
         tree.build(items, 3);
 
@@ -61,7 +61,7 @@ public:
     static void InsertDuplicates() {
         TreeType<int> tree;
 
-        std::vector<int> items = {1, 1, 2, 2, 3, 3};
+        const std::vector items = {1, 1, 2, 2, 3, 3};
 
         for (int v : items) {
             tree.insert(v);
@@ -75,7 +75,7 @@ public:
     static void ClearTree() {
         TreeType<int> tree;
 
-        std::vector<int> items = {1, 2, 3};
+        const std::vector items = {1, 2, 3};
 
         for (int v : items) {
             tree.insert(v);
@@ -94,7 +94,7 @@ public:
 
     static void MultipleClear() {
         TreeType<int> tree;
-        std::vector<int> items = {1, 2, 3};
+        const std::vector<int> items = {1, 2, 3};
 
         for (int i = 0; i < 10; i++) {
             for (int v : items) {
@@ -113,7 +113,7 @@ public:
     static void RemoveItems() {
         TreeType<int> tree;
 
-        std::vector<int> items = {1, 2, 3};
+        const std::vector<int> items = {1, 2, 3};
 
         for (int v : items) {
             tree.insert(v);
