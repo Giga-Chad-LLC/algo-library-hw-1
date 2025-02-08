@@ -44,7 +44,11 @@ public:
     BSTree(Comp comparator, Alloc allocator)
         : m_comparator(comparator), m_allocator(allocator) {}
 
-    virtual void build(const T* items, size_t n) = 0;
+    virtual void build(const T* items, const size_t n) {
+        for (size_t i = 0; i < n; i++) {
+            insert(items[i]);
+        }
+    }
 
     virtual void insert(const T&) = 0;
 

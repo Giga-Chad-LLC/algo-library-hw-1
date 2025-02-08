@@ -32,12 +32,6 @@ public:
         : BSTree<T, Comp, Alloc>(comparator, allocator),
         m_node_allocator(this->m_allocator) {}
 
-    void build(const T* items, size_t n) override {
-        for (size_t i = 0; i < n; i++) {
-            insert(items[i]);
-        }
-    }
-
     void insert(const T& value) override {
         TreeNode<T> **indirect = &(this->m_root);
         std::vector<TreeNode<T>**> path;
