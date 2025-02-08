@@ -115,21 +115,6 @@ TEST(TreesBenchmark, MeasureExecutionTimes) {
             }
         }
         const long double elapsedTotal = timer.finish(name);
-        /*
-        std::cout << "=== Report for '" << name << "' ===" << std::endl;
-        std::cout << "Operations total: " << n << std::endl;
-        std::cout << "\tInsert: " << insertCount << std::endl;
-        std::cout << "\tRemove: " << removeCount << std::endl;
-
-        std::cout << "Total time: " << elapsedTotal << "ms" << std::endl;
-
-        std::cout << "Total insert time: " << elapsedInsert << "ms, "
-                  << "Average insert time: " << elapsedInsert / static_cast<double>(insertCount) << "ms" << std::endl;
-
-        std::cout << "Total remove time: " << elapsedRemove << "ms, "
-                  << "Average remove time: " << elapsedRemove / static_cast<double>(removeCount) << "ms" << std::endl;
-        std::cout << std::endl;
-        */
 
         report << "=== Report for '" << name << "' ===\n";
         report << "Operations total: " << n << "\n";
