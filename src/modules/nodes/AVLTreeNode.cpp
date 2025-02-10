@@ -1,6 +1,6 @@
 module;
 
-#include <memory>
+#include <algorithm>
 
 export module tree_algorithms:AVLTreeNode;
 import :TreeNode;
@@ -16,16 +16,22 @@ struct AVLTreeNode final : public TreeNode<T> {
     using TreeNode<T>::TreeNode;
 
     void updateValues() {
-        this->_count = this->size(this->left) + this->size(this->right) + 1;
-        this->_height = std::max(this->height(this->left), this->height(this->right)) + 1;
+        auto* leftNode = static_cast<AVLTreeNode*>(this->left);
+        auto* rightNode = static_cast<AVLTreeNode*>(this->right);
+
+        this->_count = AVLTreeNode::size(leftNode) + AVLTreeNode::size(rightNode) + 1;
+        this->_height = std::max(AVLTreeNode::height(leftNode), AVLTreeNode::height(rightNode)) + 1;
     }
 
     int balanceFactor() {
-        return this->height(this->left) - this->height(this->right);
+        auto* leftNode = static_cast<AVLTreeNode*>(this->left);
+        auto* rightNode = static_cast<AVLTreeNode*>(this->right);
+
+        return AVLTreeNode::height(leftNode) - AVLTreeNode::height(rightNode);
     }
 
     AVLTreeNode* leftRotate() {
-        AVLTreeNode* prevRight = static_cast<AVLTreeNode*>(this->right);
+        auto* prevRight = static_cast<AVLTreeNode*>(this->right);
         this->right = this->right->left;
         prevRight->left = this;
 
@@ -37,7 +43,7 @@ struct AVLTreeNode final : public TreeNode<T> {
     }
 
     AVLTreeNode* rightRotate() {
-        AVLTreeNode* prevLeft = static_cast<AVLTreeNode*>(this->left);
+        auto* prevLeft = static_cast<AVLTreeNode*>(this->left);
         this->left = this->left->right;
         prevLeft->right = this;
 
@@ -46,6 +52,19 @@ struct AVLTreeNode final : public TreeNode<T> {
         prevLeft->updateValues();
 
         return prevLeft;
+    }
+
+private:
+    // how many nodes are there in this subtree
+    int _count = 1;
+    int _height = 1;
+
+    static int height(const AVLTreeNode<T>* node) noexcept {
+        return (node != nullptr) ? node->_height : 0;
+    }
+
+    static int size(const AVLTreeNode<T>* node) noexcept {
+        return (node != nullptr) ? node->_count : 0;
     }
 };
 

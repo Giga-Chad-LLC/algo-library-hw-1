@@ -20,7 +20,7 @@ using namespace nodes;
  * Maintains the invariant at each node that the absolute difference in height between subtrees is at most 1.
  * Search, insertion, and deletion operations are O(log n).
  *
- * Implementation taken from: https://github.com/KadirEmreOto/AVL-Tree
+ * Credits: https://github.com/KadirEmreOto/AVL-Tree
  */
 export template<typename T, typename Comp = std::less<T>, typename Alloc = std::allocator<T>>
 class AVLTree final : public BSTree<T, Comp, Alloc> {

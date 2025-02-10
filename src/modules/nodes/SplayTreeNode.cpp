@@ -4,8 +4,6 @@
 
 module;
 
-#include <memory>
-
 export module tree_algorithms:SplayTreeNode;
 import :TreeNode;
 

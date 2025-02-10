@@ -14,7 +14,7 @@ import tree_algorithms;
 // NOTE: extend these templates according to support testing for other tree types
 template <typename T> using AVLTreeType = trees::AVLTree<T>;
 template <typename T> using SplayTreeType = trees::SplayTree<T>;
-
+template <typename T> using TreapTreeType = trees::TreapTree<T>;
 
 
 template <typename TreeType>
@@ -29,7 +29,8 @@ struct TreeTemplateWrapper {
 
 using TreeTypeTemplates = ::testing::Types<
     TreeTemplateWrapper<AVLTreeType>,
-    TreeTemplateWrapper<SplayTreeType>
+    TreeTemplateWrapper<SplayTreeType>,
+    TreeTemplateWrapper<TreapTreeType>
 >;
 
 template <typename TreeWrapper>

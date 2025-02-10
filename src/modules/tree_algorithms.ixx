@@ -11,3 +11,4 @@ export module tree_algorithms;
 export import :BSTree;
 export import :AVLTree;
 export import :SplayTree;
+export import :TreapTree;

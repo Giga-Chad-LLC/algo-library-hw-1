@@ -73,7 +73,7 @@ TEST(TreesBenchmark, MeasureExecutionTimes) {
     std::vector<std::pair<std::string, Tree>> trees;
     trees.emplace_back("AVLTree<int>", std::make_unique<trees::AVLTree<int>>());
     trees.emplace_back("SplayTree<int>", std::make_unique<trees::SplayTree<int>>());
-
+    trees.emplace_back("TreapTree<int>", std::make_unique<trees::TreapTree<int>>());
 
     constexpr int seed = 42;
     std::mt19937 rng(seed);
