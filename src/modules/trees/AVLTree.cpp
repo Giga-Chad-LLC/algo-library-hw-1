@@ -64,7 +64,13 @@ public:
         TreeNode<T> **indirect = &(this->m_root);
         std::vector<TreeNode<T>**> path;
 
-        while ((*indirect != nullptr) && (*indirect)->value != value) {
+        while (
+            (*indirect != nullptr) &&
+            (
+                this->m_comparator((*indirect)->value, value) ||
+                this->m_comparator(value, (*indirect)->value)
+            )
+        ) {
             path.push_back(indirect);
 
             if (this->m_comparator((*indirect)->value, value)) {

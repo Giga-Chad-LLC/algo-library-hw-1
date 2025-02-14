@@ -1,5 +1,6 @@
 module;
 
+#include <concepts>
 #include <functional>
 #include <memory>
 #include <vector>
@@ -11,9 +12,33 @@ import :TreeNode;
 
 namespace trees {
 
+namespace details {
+
+// Define concepts
+template <typename T>
+concept CopyConstructible = std::copy_constructible<T>;
+
+template <typename Comp, typename T>
+concept Comparator = requires(Comp comp, const T& a, const T& b) {
+    { comp(a, b) } -> std::convertible_to<bool>;
+};
+
+template <typename Alloc, typename T>
+concept Allocator = requires(Alloc alloc, T* ptr, std::size_t n) {
+    { alloc.allocate(n) } -> std::same_as<T*>;
+    alloc.deallocate(ptr, n);
+};
+
+
+}
+
 using namespace nodes;
 
-export template<typename T, typename Comp = std::less<T>, typename Alloc = std::allocator<T>>
+export template<
+    details::CopyConstructible T,
+    details::Comparator<T> Comp = std::less<T>,
+    details::Allocator<T> Alloc = std::allocator<T>
+>
 class BSTree {
 public:
     BSTree(Comp comparator, Alloc allocator)

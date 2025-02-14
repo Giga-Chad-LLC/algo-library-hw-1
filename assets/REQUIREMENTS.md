@@ -10,9 +10,9 @@
     - `size_t count(const T&)` возвращает кол-во элементов в дереве.
     - `bool remove(const T&)` удаляет элементы из дерева, возвращает `true`, если удаление имело место быть.
     - `void clear()` удаляет все элементы дерева.
-    - `BSTree<T, Comp, Alloc>::Iterator begin() const` возвращает итератор, указывающий на наименьший элемент дерева.
-    - `BSTree<T, Comp, Alloc>::Iterator end() const` возвращает итератор, указывающий на следующий элемент после наибольшего.
-1. Вложенный интерфейс итератора соответствует [`LegacyForwardIterator`](https://en.cppreference.com/w/cpp/named_req/ForwardIterator).
+    - ~~`BSTree<T, Comp, Alloc>::Iterator begin() const` возвращает итератор, указывающий на наименьший элемент дерева.~~
+    - ~~`BSTree<T, Comp, Alloc>::Iterator end() const` возвращает итератор, указывающий на следующий элемент после наибольшего.~~
+1. ~~Вложенный интерфейс итератора соответствует [`LegacyForwardIterator`](https://en.cppreference.com/w/cpp/named_req/ForwardIterator).~~
 
 
 # Тестирование
