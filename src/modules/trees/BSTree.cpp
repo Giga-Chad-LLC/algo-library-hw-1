@@ -127,7 +127,7 @@ public:
 
 protected:
     /**
-     * Subclasses of `BSTTree<...>` will call this method from overriden `TreeNode<T>* create(const T&)`
+     * Subclasses of `BSTree<...>` will call this method from overriden `TreeNode<T>* create(const T&)`
      * with their rebinded allocator for instantiation of their nodes (e.g. AVLTree<...> uses allocator which
      * manages AVLTreeNode<...> nodes, etc.)
      */
@@ -141,7 +141,7 @@ protected:
     }
 
     /**
-     * Subclasses of `BSTTree<...>` will call this method from overriden `TreeNode<T>* destroy(const T&)`
+     * Subclasses of `BSTree<...>` will call this method from overriden `TreeNode<T>* destroy(const T&)`
      * with their rebinded allocator for deletion of their nodes (e.g. AVLTree<...> uses allocator which
      * manages AVLTreeNode<...> nodes, etc.)
      */
@@ -154,11 +154,11 @@ protected:
     }
 
     /**
-     * Used by each `BSTTree` implementor in order to allocate memory for nodes and `T`.
+     * Used by each `BSTree` implementor in order to allocate memory for nodes and `T`.
      */
     virtual TreeNode<T>* create(const T& value) = 0;
     /**
-     * Used by each `BSTTree` implementor in order to deallocate memory of nodes and `T`.
+     * Used by each `BSTree` implementor in order to deallocate memory of nodes and `T`.
      */
     virtual void destroy(TreeNode<T>* node) = 0;
 

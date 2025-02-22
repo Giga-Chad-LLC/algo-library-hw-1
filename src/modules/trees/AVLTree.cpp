@@ -183,7 +183,7 @@ private:
     }
 
     /**
-     * Each `BSTTree` implementor has an allocator which manages `TreeSpecificNode<T>`. It is used in `create` and `destroy` methods.
+     * Each `BSTree` implementor has an allocator which manages `TreeSpecificNode<T>`. It is used in `create` and `destroy` methods.
      */
     NodeAllocatorType m_node_allocator;
 };
