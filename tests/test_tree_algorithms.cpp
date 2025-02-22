@@ -79,7 +79,7 @@ TEST(TreesBenchmark, MeasureExecutionTimes) {
     std::mt19937 rng(seed);
     std::uniform_int_distribution distribution(1, 1'000'000);
 
-    constexpr size_t n = 100'000;
+    constexpr size_t n = 1'000'000;
     std::vector<int> numbers(n);
 
     for (size_t i = 0; i < n; ++i) {

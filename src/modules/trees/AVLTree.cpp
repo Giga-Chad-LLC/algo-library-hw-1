@@ -24,6 +24,10 @@ using namespace nodes;
  */
 export template<typename T, typename Comp = std::less<T>, typename Alloc = std::allocator<T>>
 class AVLTree final : public BSTree<T, Comp, Alloc> {
+    /**
+     * User provides us with allocator which manages `T`, but we want to manage `AVLTreeNode<T>` with that.
+     * In order to achieve it, we use allocator rebinding.
+     */
     using NodeAllocatorType = typename std::allocator_traits<Alloc>::template rebind_alloc<AVLTreeNode<T>>;
 
 public:
@@ -178,6 +182,9 @@ private:
         this->BSTree<T, Comp, Alloc>::template destroy<AVLTreeNode<T>>(m_node_allocator, static_cast<AVLTreeNode<T>*>(node));
     }
 
+    /**
+     * Each `BSTTree` implementor has an allocator which manages `TreeSpecificNode<T>`. It is used in `create` and `destroy` methods.
+     */
     NodeAllocatorType m_node_allocator;
 };
 

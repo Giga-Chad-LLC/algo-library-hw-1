@@ -34,6 +34,15 @@ concept Allocator = requires(Alloc alloc, T* ptr, std::size_t n) {
 
 using namespace nodes;
 
+/**
+ * BSTree -- *balanced* search tree. We know that BST refers to binary search tree,
+ * but in our case we planned to have B-tree as well, which is not binary, obviously, so naming clash happened here.
+ * @tparam T stored type, which must be `CopyConstructible`.
+ * @tparam Comp functor (implements `bool operator()(const T&, const T&) const`), default is `std::less<T>`.
+ * @tparam Alloc allocator, default is `std::allocator<T>`. Users gives use allocator which manages the `T`, but we
+ * want ot be able to allocate with it also the nodes of the tree and not only the `T`. For this the `rebind_alloc` is used (https://en.cppreference.com/w/cpp/memory/allocator_traits),
+ * see `AVLTree<>` as an example of how to use it.
+ */
 export template<
     details::CopyConstructible T,
     details::Comparator<T> Comp = std::less<T>,
@@ -110,12 +119,18 @@ public:
         this->m_root = nullptr;
     }
 
+    // Decided not to implement....
     // BSTree<T, Comp, Alloc>::Iterator begin() const
     // BSTree<T, Comp, Alloc>::Iterator end() const
 
     virtual ~BSTree() = default;
 
 protected:
+    /**
+     * Subclasses of `BSTTree<...>` will call this method from overriden `TreeNode<T>* create(const T&)`
+     * with their rebinded allocator for instantiation of their nodes (e.g. AVLTree<...> uses allocator which
+     * manages AVLTreeNode<...> nodes, etc.)
+     */
     template<typename NodeType, typename NodeAllocType>
     NodeType* create(NodeAllocType& node_alloc, const T& value) {
         using NodeAllocTraits = std::allocator_traits<NodeAllocType>;
@@ -125,6 +140,11 @@ protected:
         return node;
     }
 
+    /**
+     * Subclasses of `BSTTree<...>` will call this method from overriden `TreeNode<T>* destroy(const T&)`
+     * with their rebinded allocator for deletion of their nodes (e.g. AVLTree<...> uses allocator which
+     * manages AVLTreeNode<...> nodes, etc.)
+     */
     template<typename NodeType, typename NodeAllocType>
     void destroy(NodeAllocType& node_alloc, NodeType* node) {
         using NodeAllocTraits = std::allocator_traits<NodeAllocType>;
@@ -133,7 +153,13 @@ protected:
         NodeAllocTraits::deallocate(node_alloc, node, 1);
     }
 
+    /**
+     * Used by each `BSTTree` implementor in order to allocate memory for nodes and `T`.
+     */
     virtual TreeNode<T>* create(const T& value) = 0;
+    /**
+     * Used by each `BSTTree` implementor in order to deallocate memory of nodes and `T`.
+     */
     virtual void destroy(TreeNode<T>* node) = 0;
 
     size_t m_size = 0;

@@ -27,6 +27,9 @@ struct TreeTemplateWrapper {
     template <typename T> using Type = TreeTemplate<T>;
 };
 
+/**
+ * Insert new tree subclass here to run unit-tests on it.
+ */
 using TreeTypeTemplates = ::testing::Types<
     TreeTemplateWrapper<AVLTreeType>,
     TreeTemplateWrapper<SplayTreeType>,
