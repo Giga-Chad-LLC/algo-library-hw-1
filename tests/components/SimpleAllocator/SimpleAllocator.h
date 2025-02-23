@@ -17,6 +17,8 @@ struct SimpleAllocatorCounter {
     inline static int count = 0;
 };
 
+// Dumb allocator which uses C api to work with memory,
+// it is only used to test the correct allocation/deallocation by the trees
 template <typename T>
 struct SimpleAllocator {
     using value_type = T;
