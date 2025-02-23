@@ -12,19 +12,19 @@ import tree_algorithms;
 
 // Define the tree types to test (extend this list as needed)
 // NOTE: extend these templates according to support testing for other tree types
-template <typename T> using AVLTreeType = trees::AVLTree<T>;
-template <typename T> using SplayTreeType = trees::SplayTree<T>;
-template <typename T> using TreapTreeType = trees::TreapTree<T>;
+template <typename T, typename Comp, typename Alloc> using AVLTreeType = trees::AVLTree<T, Comp, Alloc>;
+template <typename T, typename Comp, typename Alloc> using SplayTreeType = trees::SplayTree<T, Comp, Alloc>;
+template <typename T, typename Comp, typename Alloc> using TreapTreeType = trees::TreapTree<T, Comp, Alloc>;
 
 
 template <typename TreeType>
 class ParameterizedTreeTests : public ::testing::Test {};
 
 
-template <template <typename> class TreeTemplate>
+template <template <typename, typename, typename> class TreeTemplate>
 struct TreeTemplateWrapper {
-    // Aliases the tree type with a specific type `T`
-    template <typename T> using Type = TreeTemplate<T>;
+    // Aliases the tree type with a specific type `T`, `Comp`, and `Alloc`
+    template <typename T, typename Comp, typename Alloc> using Type = TreeTemplate<T, Comp, Alloc>;
 };
 
 /**
@@ -41,7 +41,7 @@ class ParameterizedTreeTester : public ::testing::Test {
 protected:
     // Define the alias for the unwrapped tree type
     // Actual tree type for testing
-    template <typename T> using TreeType = typename TreeWrapper::template Type<T>;
+    template <typename T, typename Comp, typename Alloc> using TreeType = typename TreeWrapper::template Type<T, Comp, Alloc>;
 };
 
 

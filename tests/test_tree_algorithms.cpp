@@ -65,6 +65,9 @@ TYPED_TEST(ParameterizedTreeTester, RemoveDuplicates) {
     trees::test::TreeTester<TestFixture::template TreeType>::RemoveDuplicates();
 }
 
+TYPED_TEST(ParameterizedTreeTester, UseCustomAllocator) {
+    trees::test::TreeTester<TestFixture::template TreeType>::UseCustomAllocator();
+}
 
 // TODO: find better place
 TEST(TreesBenchmark, MeasureExecutionTimes) {

@@ -2,12 +2,14 @@
 
 #include <gtest/gtest.h>
 
+#include "SimpleAllocator/SimpleAllocator.h"
+
 import tree_algorithms;
 
 namespace trees::test {
     using namespace trees;
 
-template<template <typename> class TreeType>
+template<template <typename T, typename Comp = std::less<T>, typename Alloc = std::allocator<T>> class TreeType>
 class TreeTester {
 public:
     static void BuildEmptyTree() {
@@ -160,6 +162,34 @@ public:
             EXPECT_EQ(tree.count(1), expected);
             EXPECT_EQ(tree.count(2), expected);
         }
+    }
+
+    static void UseCustomAllocator() {
+        // SimpleAllocatorCounter::count is a static variable, which tracks the allocations done by SimpleAllocator<>
+        // with any template type. It must be zero on the test entrances, otherwise
+        // it would mean that the allocator does deallocate some tree nodes, which would cause
+        // memory leaks.
+        EXPECT_EQ(testing::SimpleAllocatorCounter::count, 0);
+
+        TreeType<int, std::less<int>, testing::SimpleAllocator<int>> tree{
+            std::less<int>(),
+            testing::SimpleAllocator<int>()
+        };
+
+        const int n = 1'000;
+
+        for (int i = 0; i < n; i++) {
+            tree.insert(i);
+        }
+
+        EXPECT_EQ(testing::SimpleAllocatorCounter::count, n);
+
+        for (int i = 0; i < n; i++) {
+            EXPECT_EQ(tree.count(i), 1);
+            EXPECT_TRUE(tree.remove(i));
+        }
+
+        EXPECT_EQ(testing::SimpleAllocatorCounter::count, 0);
     }
 };
 

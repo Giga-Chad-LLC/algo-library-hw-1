@@ -19,25 +19,25 @@
     Operations total: 1000000
     Insert: 499859
     Remove: 500141
-    Total time: 12700ms
-    Total insert time: 6836.7ms, Average insert time: 0.0136773ms
-    Total remove time: 3881.96ms, Average remove time: 0.00776173ms
+    Total time: 8588ms
+    Total insert time: 4721.42ms, Average insert time: 0.00944551ms
+    Total remove time: 2630.33ms, Average remove time: 0.00525918ms
     
     === Report for 'SplayTree<int>' ===
     Operations total: 1000000
     Insert: 499859
     Remove: 500141
-    Total time: 7863.11ms
-    Total insert time: 3250.65ms, Average insert time: 0.00650314ms
-    Total remove time: 2937.7ms, Average remove time: 0.00587374ms
+    Total time: 5584.9ms
+    Total insert time: 2284.1ms, Average insert time: 0.0045695ms
+    Total remove time: 2117.74ms, Average remove time: 0.00423428ms
     
     === Report for 'TreapTree<int>' ===
     Operations total: 1000000
     Insert: 499859
     Remove: 500141
-    Total time: 4808.83ms
-    Total insert time: 2099.25ms, Average insert time: 0.00419969ms
-    Total remove time: 1506.55ms, Average remove time: 0.00301224ms
+    Total time: 4336.97ms
+    Total insert time: 1886.56ms, Average insert time: 0.00377418ms
+    Total remove time: 1339.78ms, Average remove time: 0.0026788ms
     ```
    Выводы: все имплементации написаны на указателях, причем в Splay и AVL деревьях разыменований существенно больше, чем в Treap,
    из-за этого они работают медленнее. При этом AVL в своей реализации методов `insert` и `remove` использует `std::vector`

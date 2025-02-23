@@ -39,7 +39,8 @@ add_test(tests ${TEST_TARGET})
 
 target_sources(${TEST_TARGET} PUBLIC
     ${PROJECT_SOURCE_DIR}/tests/components/ExecutionTimer/ExecutionTimer.cpp
-        ${PROJECT_SOURCE_DIR}/tests/components/Report/Report.cpp
+    ${PROJECT_SOURCE_DIR}/tests/components/Report/Report.cpp
+    ${PROJECT_SOURCE_DIR}/tests/components/SimpleAllocator/SimpleAllocator.h
 )
 
 # Add Valgrind options
