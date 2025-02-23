@@ -11,6 +11,8 @@
 
 namespace trees::testing {
 
+// Since the allocator in trees will be rebinded, so we need a static variable not tied to SimpleAllocator<T>,
+// because trees will use SimpleAllocator<TreeNodeType<T>> allocator instead.
 struct SimpleAllocatorCounter {
     inline static int count = 0;
 };
