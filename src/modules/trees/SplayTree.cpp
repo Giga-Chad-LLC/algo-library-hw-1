@@ -174,40 +174,33 @@ private:
     return curr;
   }
 
-
-  // TODO: too much copy-paste in if-else branches of zig/zags, refactor
-
   void zig(SplayTreeNode<T>* x) {
     auto* p = static_cast<SplayTreeNode<T>*>(x->parent);
 
     if (p->left == x) {
-      auto* A = static_cast<SplayTreeNode<T>*>(x->left);
-      auto* B = static_cast<SplayTreeNode<T>*>(x->right);
-      auto* C = static_cast<SplayTreeNode<T>*>(p->right);
+      auto* x_right = static_cast<SplayTreeNode<T>*>(x->right);
 
       x->parent = nullptr;
       x->right = p;
 
       p->parent = x;
-      p->left = B;
+      p->left = x_right;
 
-      if (B != nullptr) {
-        B->parent = p;
+      if (x_right != nullptr) {
+        x_right->parent = p;
       }
     }
     else {
-      auto* A = static_cast<SplayTreeNode<T>*>(p->left);
-      auto* B = static_cast<SplayTreeNode<T>*>(x->left);
-      auto* C = static_cast<SplayTreeNode<T>*>(x->right);
+      auto* x_left = static_cast<SplayTreeNode<T>*>(x->left);
 
       x->parent = nullptr;
       x->left = p;
 
       p->parent = x;
-      p->right = B;
+      p->right = x_left;
 
-      if (B != nullptr) {
-        B->parent = p;
+      if (x_left != nullptr) {
+        x_left->parent = p;
       }
     }
   }
@@ -216,21 +209,19 @@ private:
       SplayTreeNode<T>* p = x->parent;
       SplayTreeNode<T>* g = p->parent;
 
-      if (p -> left == x) {
-        auto* A = static_cast<SplayTreeNode<T>*>(x->left);
-        auto* B = static_cast<SplayTreeNode<T>*>(x->right);
-        auto* C = static_cast<SplayTreeNode<T>*>(p->right);
-        auto* D = static_cast<SplayTreeNode<T>*>(g->right);
+      if (p->left == x) {
+        auto* x_right = static_cast<SplayTreeNode<T>*>(x->right);
+        auto* p_right = static_cast<SplayTreeNode<T>*>(p->right);
 
         x->parent = g->parent;
         x->right = p;
 
         p->parent = x;
-        p->left = B;
+        p->left = x_right;
         p->right = g;
 
         g->parent = p;
-        g->left = C;
+        g->left = p_right;
 
         if (x->parent != nullptr) {
           if (x->parent->left == g) {
@@ -241,29 +232,27 @@ private:
           }
         }
 
-        if (B != nullptr) {
-          B->parent = p;
+        if (x_right != nullptr) {
+          x_right->parent = p;
         }
 
-        if (C != nullptr) {
-          C->parent = g;
+        if (p_right != nullptr) {
+          p_right->parent = g;
         }
       }
       else {
-        auto* A = static_cast<SplayTreeNode<T>*>(g->left);
-        auto* B = static_cast<SplayTreeNode<T>*>(p->left);
-        auto* C = static_cast<SplayTreeNode<T>*>(x->left);
-        auto* D = static_cast<SplayTreeNode<T>*>(x->right);
+        auto* p_left = static_cast<SplayTreeNode<T>*>(p->left);
+        auto* x_left = static_cast<SplayTreeNode<T>*>(x->left);
 
         x->parent = g->parent;
         x->left = p;
 
         p->parent = x;
         p->left = g;
-        p->right = C;
+        p->right = x_left;
 
         g->parent = p;
-        g->right = B;
+        g->right = p_left;
 
         if (x->parent != nullptr) {
           if (x->parent->left == g) {
@@ -274,12 +263,12 @@ private:
           }
         }
 
-        if (B != nullptr) {
-          B->parent = g;
+        if (p_left != nullptr) {
+          p_left->parent = g;
         }
 
-        if (C != nullptr) {
-          C->parent = p;
+        if (x_left != nullptr) {
+          x_left->parent = p;
         }
       }
   }
@@ -288,21 +277,19 @@ private:
     auto* p = static_cast<SplayTreeNode<T>*>(x->parent);
     auto* g = static_cast<SplayTreeNode<T>*>(p->parent);
 
-    if (p -> right == x) {
-      auto* A = static_cast<SplayTreeNode<T>*>(p->left);
-      auto* B = static_cast<SplayTreeNode<T>*>(x->left);
-      auto* C = static_cast<SplayTreeNode<T>*>(x->right);
-      auto* D = static_cast<SplayTreeNode<T>*>(g->right);
+    if (p->right == x) {
+      auto* x_left = static_cast<SplayTreeNode<T>*>(x->left);
+      auto* x_right = static_cast<SplayTreeNode<T>*>(x->right);
 
       x->parent = g->parent;
       x->left = p;
       x->right = g;
 
       p->parent = x;
-      p->right = B;
+      p->right = x_left;
 
       g->parent = x;
-      g->left = C;
+      g->left = x_right;
 
       if (x->parent != nullptr) {
         if (x->parent->left == g) {
@@ -313,29 +300,27 @@ private:
         }
       }
 
-      if (B != nullptr) {
-        B->parent = p;
+      if (x_left != nullptr) {
+        x_left->parent = p;
       }
 
-      if (C != nullptr) {
-        C->parent = g;
+      if (x_right != nullptr) {
+        x_right->parent = g;
       }
     }
     else {
-      auto* A = static_cast<SplayTreeNode<T>*>(g->left);
-      auto* B = static_cast<SplayTreeNode<T>*>(x->left);
-      auto* C = static_cast<SplayTreeNode<T>*>(x->right);
-      auto* D = static_cast<SplayTreeNode<T>*>(p->right);
+      auto* x_left = static_cast<SplayTreeNode<T>*>(x->left);
+      auto* x_right = static_cast<SplayTreeNode<T>*>(x->right);
 
       x->parent = g->parent;
       x->left = g;
       x->right = p;
 
       p->parent = x;
-      p->left = C;
+      p->left = x_right;
 
       g->parent = x;
-      g->right = B;
+      g->right = x_left;
 
       if (x->parent != nullptr) {
         if (x->parent->left == g) {
@@ -346,11 +331,11 @@ private:
         }
       }
 
-      if (B != nullptr) {
-        B->parent = g;
+      if (x_left != nullptr) {
+        x_left->parent = g;
       }
-      if (C != nullptr) {
-        C->parent = p;
+      if (x_right != nullptr) {
+        x_right->parent = p;
       }
     }
   }
