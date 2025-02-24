@@ -20,11 +20,13 @@ target_sources(${LIBRARY_TARGET}
         ${PROJECT_SOURCE_DIR}/src/modules/tree_algorithms.ixx
         # trees
         ${PROJECT_SOURCE_DIR}/src/modules/trees/BSTree.cpp
+        ${PROJECT_SOURCE_DIR}/src/modules/trees/RBTree.cpp
         ${PROJECT_SOURCE_DIR}/src/modules/trees/AVLTree.cpp
         ${PROJECT_SOURCE_DIR}/src/modules/trees/SplayTree.cpp
         ${PROJECT_SOURCE_DIR}/src/modules/trees/TreapTree.cpp
         # nodes
         ${PROJECT_SOURCE_DIR}/src/modules/nodes/TreeNode.cpp
+        ${PROJECT_SOURCE_DIR}/src/modules/nodes/RBTreeNode.cpp
         ${PROJECT_SOURCE_DIR}/src/modules/nodes/AVLTreeNode.cpp
         ${PROJECT_SOURCE_DIR}/src/modules/nodes/SplayTreeNode.cpp
         ${PROJECT_SOURCE_DIR}/src/modules/nodes/TreapTreeNode.cpp

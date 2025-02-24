@@ -15,6 +15,7 @@ import tree_algorithms;
 template <typename T, typename Comp, typename Alloc> using AVLTreeType = trees::AVLTree<T, Comp, Alloc>;
 template <typename T, typename Comp, typename Alloc> using SplayTreeType = trees::SplayTree<T, Comp, Alloc>;
 template <typename T, typename Comp, typename Alloc> using TreapTreeType = trees::TreapTree<T, Comp, Alloc>;
+template <typename T, typename Comp, typename Alloc> using RBTreeType = trees::RBTree<T, Comp, Alloc>;
 
 
 template <typename TreeType>
@@ -33,7 +34,8 @@ struct TreeTemplateWrapper {
 using TreeTypeTemplates = ::testing::Types<
     TreeTemplateWrapper<AVLTreeType>,
     TreeTemplateWrapper<SplayTreeType>,
-    TreeTemplateWrapper<TreapTreeType>
+    TreeTemplateWrapper<TreapTreeType>,
+    TreeTemplateWrapper<RBTreeType>
 >;
 
 template <typename TreeWrapper>

@@ -9,6 +9,7 @@ export module tree_algorithms;
 
 // trees
 export import :BSTree;
+export import :RBTree;
 export import :AVLTree;
 export import :SplayTree;
 export import :TreapTree;
