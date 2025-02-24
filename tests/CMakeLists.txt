@@ -16,47 +16,33 @@ set(GTEST_MAIN gtest_main)
 
 # Define target name
 set(TEST_TARGET test_tree_algorithms)
-set(BENCHMARK_TARGET benchmark_tree_algorithms)
 
 # Add test executable
 add_executable(${TEST_TARGET}
     ${PROJECT_SOURCE_DIR}/tests/test_tree_algorithms.cpp
 )
-add_executable(${BENCHMARK_TARGET}
-        ${PROJECT_SOURCE_DIR}/tests/benchmark_tree_algorithms.cpp
-)
 
 # TODO: do not duplicate commands for test and benchmark targets
 # Enable C++20
 target_compile_features(${TEST_TARGET} PUBLIC cxx_std_20)
-target_compile_features(${BENCHMARK_TARGET} PUBLIC cxx_std_20)
 
 # Add sanitizers
 enable_sanitizers_and_strict_warnings(${TEST_TARGET})
-enable_sanitizers_and_strict_warnings(${BENCHMARK_TARGET})
 
 
 # Link our library and Google Test
 target_link_libraries(${TEST_TARGET} PRIVATE ${TREE_ALGORITHMS} ${GTEST_MAIN})
-target_link_libraries(${BENCHMARK_TARGET} PRIVATE ${TREE_ALGORITHMS} ${GTEST_MAIN})
 
 
 # Enable google test
 include(GoogleTest)
 gtest_discover_tests(${TEST_TARGET})
-gtest_discover_tests(${BENCHMARK_TARGET})
 
 add_test(tests ${TEST_TARGET})
-add_test(benchmarks ${BENCHMARK_TARGET})
 
 
 target_sources(${TEST_TARGET} PUBLIC
     ${PROJECT_SOURCE_DIR}/tests/components/SimpleAllocator/SimpleAllocator.h
-)
-target_sources(${BENCHMARK_TARGET} PUBLIC
-        ${PROJECT_SOURCE_DIR}/tests/components/ExecutionTimer/ExecutionTimer.cpp
-        ${PROJECT_SOURCE_DIR}/tests/components/Report/Report.cpp
-        ${PROJECT_SOURCE_DIR}/tests/components/SimpleAllocator/SimpleAllocator.h
 )
 
 # Add Valgrind options
@@ -72,11 +58,6 @@ if (VALGRIND_EXECUTABLE)
         PROPERTIES
         ENVIRONMENT "GTEST_COLOR=1"
         COMMAND ${VALGRIND_COMMAND} ${VALGRIND_FLAGS} $<TARGET_FILE:${TEST_TARGET}>
-    )
-    set_tests_properties(benchmarks
-            PROPERTIES
-            ENVIRONMENT "GTEST_COLOR=1"
-            COMMAND ${VALGRIND_COMMAND} ${VALGRIND_FLAGS} $<TARGET_FILE:${BENCHMARK_TARGET}>
     )
 else()
     message(WARNING "Valgrind not found; tests and benchmarks will run without Valgrind.")
