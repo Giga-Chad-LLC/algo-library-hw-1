@@ -3,11 +3,18 @@
 
 import tree_algorithms;
 
+#include "./scenarios/Scenario/Scenario.h"
+#include "./scenarios/Random/Random.h"
+
+
 namespace {
 
-    using TreePtr = std::unique_ptr<trees::BSTree<int>>;
+    template<class T>
+    using tree_ptr = std::unique_ptr<trees::BSTree<T>>;
 
-    std::pair<std::string, TreePtr> makeTreeByName(const std::string& name) {
+    using scenario_ptr = std::unique_ptr<playground::IScenario>;
+
+    std::pair<std::string, tree_ptr<int>> make_tree_by_name(const std::string& name) {
         if (name == "AVLTree") {
             return { "AVLTree<int>", std::make_unique<trees::AVLTree<int>>() };
         }
@@ -21,6 +28,24 @@ namespace {
             return { "TreapTree<int>", std::make_unique<trees::TreapTree<int>>() };
         }
         throw std::runtime_error("Unknown tree type provided: " + name);
+    }
+
+    std::vector<scenario_ptr> select_scenarios(const std::string& name) {
+        std::vector<scenario_ptr> scenarios;
+        if (name == "all") {
+            // TODO: uncomment
+            scenarios.emplace_back(std::make_unique<playground::Random>());
+            // scenarios.emplace_back(std::make_unique<playground::Sorted>());
+        }
+        else if (name == "random") {
+            scenarios.emplace_back(std::make_unique<playground::Random>());
+        }
+        else if (name == "sorted") {
+            // TODO: uncomment
+            // scenarios.emplace_back(std::make_unique<playground::Sorted>());
+        }
+
+        return scenarios;
     }
 
 }
@@ -56,9 +81,18 @@ int main(const int argc, char* argv[]) {
         return 1;
     }
 
-    std::string tree_name = argv[1];
-    std::string scenario = argv[2];
+    const std::string tree_name = argv[1];
+    const std::string scenario_name = argv[2];
 
+    auto [tree_tag, tree]  = make_tree_by_name(tree_name);
+    const std::vector<scenario_ptr> scenarios = select_scenarios(scenario_name);
+
+    // running benchmarking scenarios
+    for (auto& scenario : scenarios) {
+        const trees::testing::Report report = scenario->run(tree_tag, tree);
+        std::cout << report.str() << std::endl;
+        // report.dump("report.txt");
+    }
 
     /*
 

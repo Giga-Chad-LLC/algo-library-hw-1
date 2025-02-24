@@ -3,8 +3,13 @@ set(PLAYGROUND_TARGET playground_tree_algorithms)
 
 add_executable(${PLAYGROUND_TARGET}
     ${PROJECT_SOURCE_DIR}/playground/main.cpp
-    ${PROJECT_SOURCE_DIR}/playground/scenarios/Random.cpp
-    ${PROJECT_SOURCE_DIR}/playground/scenarios/Scenario.cpp
+    # scenarios
+    ${PROJECT_SOURCE_DIR}/playground/scenarios/Random/Random.cpp
+    ${PROJECT_SOURCE_DIR}/playground/scenarios/Scenario/Scenario.h
+
+    # components
+    ${PROJECT_SOURCE_DIR}/playground/components/Report/Report.cpp
+    ${PROJECT_SOURCE_DIR}/playground/components/ExecutionTimer/ExecutionTimer.cpp
 )
 
 # Enable C++20
