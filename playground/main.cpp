@@ -3,8 +3,8 @@
 
 import tree_algorithms;
 
-#include "./scenarios/Scenario/Scenario.h"
-#include "./scenarios/Random/Random.h"
+#include "scenarios/Scenario/Scenario.h"
+#include "scenarios/Random/Random.h"
 #include "scenarios/Sorted/Sorted.h"
 
 
