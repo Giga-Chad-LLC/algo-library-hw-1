@@ -3,6 +3,8 @@ import yaml
 import subprocess
 import os
 from typing import Dict, List, Union
+import platform
+import psutil
 
 
 def read_config(config_filepath: str) -> Dict[str, Union[Dict, List]]:
@@ -112,6 +114,11 @@ def main():
     args = parser.parse_args()
 
     # Read the YAML configuration
+    # Print OS, platform, RAM, and CPU information
+    print(f"Operating System: {platform.system()} {platform.release()}")
+    print(f"Platform: {platform.platform()}")
+    print(f"Processor: {platform.processor()}")
+    print(f"RAM: {psutil.virtual_memory().total / (1024 ** 3):.2f} GB")
     print(f"Reading configuration from: {args.config_filepath}")
     config = read_config(args.config_filepath)
 
@@ -128,6 +135,8 @@ def main():
     if not config.get("tree_benchmark_config", {}).get("execution", {}).get("run_benchmarks", False):
         print("Benchmark execution is disabled in the configuration.")
         return
+
+    print()
 
     # Iterate over the trees and run the binary for each
     for tree in trees:
