@@ -86,4 +86,4 @@ test:
 
 .PHONY: playground
 playground:
-	python3 ./scripts/benchmarking.py -b ./build/playground/playground_tree_algorithms
+	python3 ./scripts/benchmarking.py -b ./build/playground/playground_tree_algorithms -c ./configs/benchmarking.yaml
