@@ -1,6 +1,7 @@
 import argparse
 import yaml
 import subprocess
+import os
 from typing import Dict, List, Union
 
 
@@ -43,13 +44,35 @@ def run_benchmarking_binary(binary_filepath: str, tree_name: str, benchmark_mode
             if not command_exists(valgrind):
                 raise RuntimeError(f"Error: '{valgrind}' is not installed or not available in PATH. Memcheck mode is only available when valgrind is callable as `valgrind`")
 
+            # Create a directory to store the memcheck results
+            savepath = f"memcheck_results/{tree_name}"
+            os.makedirs(savepath, exist_ok=True)
+
+            massif_output = f"{savepath}/massif.{tree_name}-{benchmark_mode}.txt"
+
             # Run the binary under valgrind with the massif tool
             result = subprocess.run(
-                ["valgrind", "--tool=massif", f"--massif-out-file={tree_name}-{benchmark_mode}.txt", binary_filepath, tree_name, benchmark_mode],
+                ["valgrind", "--tool=massif", f"--massif-out-file={massif_output}", binary_filepath, tree_name, benchmark_mode],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True
             )
+
+            # run `ms_print` to parse the massif output and print the memory usage
+            if command_exists("ms_print"):
+                if result.returncode == 0:
+                    analysis_savepath = f"{savepath}/ms_print.{tree_name}-{benchmark_mode}.txt"
+                    print(f"Print memory usage analysis via `ms_print` into '{analysis_savepath}'...")
+                    with open(analysis_savepath, 'w') as ms_print_file:
+                        subprocess.run(
+                            ["ms_print", massif_output],
+                            stdout=ms_print_file,
+                            stderr=subprocess.PIPE,
+                            text=True
+                        )
+                    print(f"Successfully saved")
+            else:
+                print("Warning: `ms_print` is not installed or not available in PATH. Skipping memory usage analysis.")
         else:
             # Run the binary with tree name and benchmark mode as arguments
             result = subprocess.run(
@@ -66,6 +89,7 @@ def run_benchmarking_binary(binary_filepath: str, tree_name: str, benchmark_mode
         else:
             # Print the error if it failed and return stderr
             return f"Error: The binary exited with code {result.returncode}\n{result.stderr}"
+
     except FileNotFoundError:
         return f"Error: The binary at '{binary_filepath}' was not found."
     except Exception as e:
@@ -75,9 +99,9 @@ def run_benchmarking_binary(binary_filepath: str, tree_name: str, benchmark_mode
 def main():
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description="""
-        Run a benchmarking binary for multiple trees specified in a YAML config. 
+        Run a benchmarking binary for multiple trees specified in a YAML config.
         The expected usage is: `executable [tree_name] [benchmark_mode]`.
-        
+
         Example:
         ```
         python ./benchmarking.py -b /users/me/build/playground/playground_tree_algorithms  -c ../configs/benchmarking.yaml
