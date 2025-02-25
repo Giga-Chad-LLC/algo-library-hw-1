@@ -61,13 +61,7 @@ namespace {
  *  4. `TreapTree`: Cartesian tree (Treap)
  * 2. Benchmarking scenario: the scenario to use for benchmark. Available values:
  *  1. `all`: runs all available benchmarking scenarios
- *  2. `random`: generates a pseudo-random datasets of elements:
- *      1) insertion (elements are inserted into the tree)
- *      2) search (elements are searched)
- *      3) removal (elements are removed from the tree)
- *     The values are bounded making the higher probability of occurrence of equal elements.
- *     The datasets are not stored in the memory separately but inserted element-wise in the tree,
- *     promoting precise memory consumption analysis.
+ *  2. `random`: see the description of the [Random::run].
  *  3.`sorted`: generates a sorted array of unique input values (ascending order)
  *      and inserts them into the tree. Then removes them in the pseudo-random order.
  *

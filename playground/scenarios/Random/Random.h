@@ -14,44 +14,35 @@ namespace playground {
 
     class Random final : public IScenario {
     public:
+        /**
+         *
+         * @param size number of elements to insert into the tree.
+         * @param seed seed for the pseudo-generator of integers
+         * @param distribution_range range of the min and max values for the generator
+         */
         explicit Random(
-            const std::size_t size = 1000,
-            const std::int64_t seed = 0,
-            const std::pair<std::int64_t, std::int64_t> &distribution_range = {0, 100}
-        ) : m_size(size), m_rng(seed), m_distribution(distribution_range.first, distribution_range.second) {}
+            std::size_t size = 100'000,
+            uint32_t seed = 0,
+            const std::pair<std::int32_t, std::int32_t> &distribution_range = {0, 100}
+        );
 
         ~Random() override = default;
 
-        trees::testing::Report run(const std::string& tag, std::unique_ptr<trees::BSTree<int>>& tree) override {
-            trees::testing::ExecutionTimer timer;
-            trees::testing::Report report;
-
-            timer.start(tag);
-            // ...
-            const long double elapsedTotal = timer.finish(tag);
-
-            report << "=== Report for '" << tag << "' ===\n";
-            report << "Operations total: " << m_size << "\n";
-            // report << "\tInsert: " << insertCount << "\n";
-            // report << "\tRemove: " << removeCount << "\n";
-
-            report << "Total time: " << elapsedTotal << "ms\n";
-
-            // report << "Total insert time: " << elapsedInsert << "ms, "
-            //           << "Average insert time: " << elapsedInsert / static_cast<double>(insertCount) << "ms\n";
-            //
-            // report << "Total remove time: " << elapsedRemove << "ms, "
-            //           << "Average remove time: " << elapsedRemove / static_cast<double>(removeCount) << "ms\n";
-
-            report << "\n";
-
-            return report;
-        }
+        /**
+         * Generates a pseudo-random datasets of elements:
+         *   1. insertion (elements are inserted into the tree)
+         *   2. removal (elements are removed from the tree)
+         *
+         * The values are bounded making the higher probability of occurrence of equal elements.
+         * The datasets are not stored in the memory separately but inserted element-wise in the tree,
+         * promoting precise memory consumption analysis.
+         */
+        trees::testing::Report run(const std::string& tag, [[maybe_unused]] std::unique_ptr<trees::BSTree<int32_t>>& tree) override;
 
     private:
         const std::size_t m_size;
         std::mt19937 m_rng;
-        const std::uniform_int_distribution<std::int64_t> m_distribution;
+        std::uniform_int_distribution<std::int32_t> m_distribution;
     };
 
 }

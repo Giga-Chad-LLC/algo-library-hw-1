@@ -16,7 +16,7 @@ namespace playground {
     public:
         virtual ~IScenario() = default;
 
-        virtual trees::testing::Report run(const std::string& tag, std::unique_ptr<trees::BSTree<int>>& tree) = 0;
+        virtual trees::testing::Report run(const std::string& tag, std::unique_ptr<trees::BSTree<int32_t>>& tree) = 0;
     };
 
 }
