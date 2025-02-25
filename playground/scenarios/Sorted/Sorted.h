@@ -15,7 +15,7 @@ namespace playground {
     public:
         explicit Sorted(
             std::int32_t start = 0,
-            std::size_t size = 100'000,
+            std::size_t size = 200'000,
             std::uint32_t seed = 0
         );
 

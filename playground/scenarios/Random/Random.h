@@ -21,9 +21,9 @@ namespace playground {
          * @param distribution_range range of the min and max values for the generator
          */
         explicit Random(
-            std::size_t size = 100'000,
+            std::size_t size = 200'000,
             uint32_t seed = 0,
-            const std::pair<std::int32_t, std::int32_t> &distribution_range = {0, 100}
+            const std::pair<std::int32_t, std::int32_t> &distribution_range = {0, 250}
         );
 
         ~Random() override = default;
