@@ -1,18 +1,21 @@
 //
 // Created by Vladislav Artiukhov on 25.02.25.
 //
-#include "Random.h"
 
+#include "Sorted.h"
+
+#include <numeric>
+#include <algorithm>
 
 namespace playground {
 
-    Random::Random(
+    Sorted::Sorted(
+        const std::int32_t start,
         const std::size_t size,
-        const uint32_t seed,
-        const std::pair<std::int32_t, std::int32_t> &distribution_range
-    ) : m_size(size), m_rng(seed), m_distribution(distribution_range.first, distribution_range.second) {}
+        const std::uint32_t seed
+    ) : m_start(start), m_size(size), m_rng(seed) {}
 
-    trees::testing::Report Random::run(const std::string& tag, [[maybe_unused]] std::unique_ptr<trees::BSTree<int32_t>>& tree) {
+    trees::testing::Report Sorted::run(const std::string &tag, std::unique_ptr<trees::BSTree<int32_t>> &tree) {
         trees::testing::ExecutionTimer timer;
         trees::testing::Report report;
 
@@ -22,13 +25,17 @@ namespace playground {
         long double elapsed_insertion = 0;
         long double elapsed_removal = 0;
 
+        std::vector<int32_t> values(m_size);
+        std::iota(std::begin(values), std::end(values), m_start);
+
+        std::vector<int32_t> shuffled = values;
+        std::ranges::shuffle(shuffled, m_rng);
+
         // start benchmarking
         timer.start(tag);
 
         // 1. insert values
-        for (size_t i = 0; i < m_size; ++i) {
-            int32_t value = m_distribution(m_rng);
-
+        for (int32_t value : values) {
             timer.start(insertion_tag);
             tree->insert(value);
             elapsed_insertion += timer.finish(insertion_tag);
@@ -36,9 +43,7 @@ namespace playground {
 
         // 2.remove values
         size_t removals_succeeded = 0;
-        for (size_t i = 0; i < m_size; ++i) {
-            int32_t value = m_distribution(m_rng);
-
+        for (int32_t value : shuffled) {
             timer.start(removal_tag);
             removals_succeeded += tree->remove(value);
             elapsed_removal += timer.finish(removal_tag);

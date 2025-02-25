@@ -10,6 +10,8 @@ add_executable(${PLAYGROUND_TARGET}
     # components
     ${PROJECT_SOURCE_DIR}/playground/components/Report/Report.cpp
     ${PROJECT_SOURCE_DIR}/playground/components/ExecutionTimer/ExecutionTimer.cpp
+        scenarios/Sorted/Sorted.h
+        scenarios/Sorted/Sorted.cpp
 )
 
 # Enable C++20

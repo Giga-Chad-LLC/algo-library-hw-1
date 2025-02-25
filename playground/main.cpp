@@ -5,6 +5,7 @@ import tree_algorithms;
 
 #include "./scenarios/Scenario/Scenario.h"
 #include "./scenarios/Random/Random.h"
+#include "scenarios/Sorted/Sorted.h"
 
 
 namespace {
@@ -33,16 +34,14 @@ namespace {
     std::vector<scenario_ptr> select_scenarios(const std::string& name) {
         std::vector<scenario_ptr> scenarios;
         if (name == "all") {
-            // TODO: uncomment
             scenarios.emplace_back(std::make_unique<playground::Random>());
-            // scenarios.emplace_back(std::make_unique<playground::Sorted>());
+            scenarios.emplace_back(std::make_unique<playground::Sorted>());
         }
         else if (name == "random") {
             scenarios.emplace_back(std::make_unique<playground::Random>());
         }
         else if (name == "sorted") {
-            // TODO: uncomment
-            // scenarios.emplace_back(std::make_unique<playground::Sorted>());
+            scenarios.emplace_back(std::make_unique<playground::Sorted>());
         }
 
         return scenarios;
