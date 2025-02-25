@@ -39,7 +39,7 @@ ci-playground:
 ci-install:
 	sudo apt-get -y update
 	sudo apt-get install -y wget lsb-release software-properties-common
-	make ci-install-llvm
+	make -f ./ci/Makefile ci-install-llvm
 	make ci-install-cmake
 	make ci-install-ninja
 	make ci-install-valgrind
