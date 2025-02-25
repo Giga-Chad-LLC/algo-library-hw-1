@@ -7,6 +7,8 @@ install:
 	make install-cmake
 	make install-ninja
 	make install-valgrind
+	make install-python
+	make install-python-requirements
 
 
 # Clang and LLVM
@@ -41,6 +43,15 @@ install-ninja:
 install-valgrind:
 	sudo apt-get -y install valgrind
 	valgrind --version
+
+.PHONY: install-python
+install-python:
+	sudo apt-get -y install python
+	python3 --version
+
+.PHONY: install-python-requirements
+install-python-requirements:
+	pip3 install -r ./requirements.txt
 
 
 # Build setup
