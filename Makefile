@@ -46,12 +46,13 @@ install-valgrind:
 
 .PHONY: install-python
 install-python:
-	sudo apt-get -y install python
+	sudo apt-get -y install python3 python3-pip
 	python3 --version
 
 .PHONY: install-python-requirements
 install-python-requirements:
 	pip3 install -r ./requirements.txt
+	pip3 list
 
 
 # Build setup
