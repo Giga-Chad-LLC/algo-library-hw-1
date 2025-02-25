@@ -16,23 +16,48 @@ def read_config(config_filepath: str) -> Dict[str, Union[Dict, List]]:
     return config_data
 
 
-def run_benchmarking_binary(binary_filepath: str, tree_name: str, benchmark_mode: str) -> str:
+def command_exists(command: str) -> bool:
+    valgrind_check = subprocess.run(
+        ["which", command],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True
+    )
+    return valgrind_check.returncode == 0
+
+
+def run_benchmarking_binary(binary_filepath: str, tree_name: str, benchmark_mode: str, memcheck_mode: bool = False) -> str:
     """
     Runs the benchmarking binary as a subprocess, passing the tree name and benchmark mode as arguments.
 
     :param binary_filepath: Path to the benchmarking binary
     :param tree_name: The name of the tree to pass as an argument
     :param benchmark_mode: The benchmark mode to pass as an argument
+    :param memcheck_mode: if `False`, run the binary normally, else run it under valgrind and massif tool (requires valgrind installed platform!)
     :return: The output of the subprocess
     """
     try:
-        # Run the binary with tree name and benchmark mode as arguments
-        result = subprocess.run(
-            [binary_filepath, tree_name, benchmark_mode],
-            stdout=subprocess.PIPE,  # Capture stdout
-            stderr=subprocess.PIPE,  # Capture stderr
-            text=True  # Decode the output into a string
-        )
+        if memcheck_mode is True:
+            # Check if valgrind is installed
+            valgrind = "valgrind"
+            if not command_exists(valgrind):
+                raise RuntimeError(f"Error: '{valgrind}' is not installed or not available in PATH. Memcheck mode is only available when valgrind is callable as `valgrind`")
+
+            # Run the binary under valgrind with the massif tool
+            result = subprocess.run(
+                ["valgrind", "--tool=massif", f"--massif-out-file={tree_name}-{benchmark_mode}.txt", binary_filepath, tree_name, benchmark_mode],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+            )
+        else:
+            # Run the binary with tree name and benchmark mode as arguments
+            result = subprocess.run(
+                [binary_filepath, tree_name, benchmark_mode],
+                stdout=subprocess.PIPE,  # Capture stdout
+                stderr=subprocess.PIPE,  # Capture stderr
+                text=True  # Decode the output into a string
+            )
 
         # Check if the process completed successfully
         if result.returncode == 0:
@@ -69,9 +94,11 @@ def main():
     # Extract the values from the YAML configuration
     trees = config.get("tree_benchmark_config", {}).get("trees", [])
     benchmark_mode = config.get("tree_benchmark_config", {}).get("parameters", {}).get("benchmark_mode", "all")
+    memcheck_mode =  config.get("tree_benchmark_config", {}).get("parameters", {}).get("memcheck_mode", False)
 
     print(f"Configured Trees: {trees}")
     print(f"Benchmark Mode: {benchmark_mode}")
+    print(f"Memcheck Mode: {memcheck_mode}")
 
     # Check if benchmark execution is enabled
     if not config.get("tree_benchmark_config", {}).get("execution", {}).get("run_benchmarks", False):
@@ -81,7 +108,7 @@ def main():
     # Iterate over the trees and run the binary for each
     for tree in trees:
         print(f"Running benchmark for tree: {tree} with mode: {benchmark_mode}")
-        output = run_benchmarking_binary(args.binary_filepath, tree, benchmark_mode)
+        output = run_benchmarking_binary(args.binary_filepath, tree, benchmark_mode, memcheck_mode=memcheck_mode)
         print(f"==== Output for {tree} ====")
         print(output)
 
