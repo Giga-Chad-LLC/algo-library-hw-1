@@ -108,7 +108,7 @@ def main():
         ```
     """)
     parser.add_argument("-b", "--binary_filepath", type=str, required=True, help="Path to the benchmarking binary to execute")
-    parser.add_argument("-c", "--config_filepath", type=str, required=True, help="Path to the YAML configuration file")
+    parser.add_argument("-c", "--config_filepath", type=str, required=False, default="../configs/benchmarking.yaml", help="Path to the YAML configuration file")
     args = parser.parse_args()
 
     # Read the YAML configuration
