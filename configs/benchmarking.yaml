@@ -1,5 +1,7 @@
 tree_benchmark_config:
-  trees: # which trees to run the benchmark on
+  # which trees to run the benchmark on
+  # when implementing your tree mention it here and in `playground/main.cpp::make_tree_by_name()` function
+  trees:
     - RBTree
     - AVLTree
     - SplayTree
