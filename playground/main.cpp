@@ -61,8 +61,7 @@ namespace {
  * 2. Benchmarking scenario: the scenario to use for benchmark. Available values:
  *  1. `all`: runs all available benchmarking scenarios
  *  2. `random`: see the description of the [Random::run].
- *  3.`sorted`: generates a sorted array of unique input values (ascending order)
- *      and inserts them into the tree. Then removes them in the pseudo-random order.
+ *  3.`sorted`: see the description of the [Sorted::run].
  *
  * @param argc number of arguments, additional arguments expected: a tree name and benchmark scenario
  * @param argv arguments

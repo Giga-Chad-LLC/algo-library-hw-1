@@ -19,6 +19,10 @@ namespace playground {
             std::uint32_t seed = 0
         );
 
+        /**
+         * Generates a sorted array of unique input values (ascending order)
+         * and inserts them into the tree. Then removes them in the pseudo-random order.
+         */
         trees::testing::Report run(const std::string &tag, std::unique_ptr<trees::BSTree<int32_t>> &tree) override;
     private:
         const std::int32_t m_start;
