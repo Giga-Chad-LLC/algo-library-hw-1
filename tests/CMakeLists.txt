@@ -13,6 +13,7 @@ include(CTest)
 # Define dependencies
 set(TREE_ALGORITHMS tree_algorithms)
 set(GTEST_MAIN gtest_main)
+set(USE_SANITIZERS ON)
 
 # Define target name
 set(TEST_TARGET test_tree_algorithms)
@@ -27,7 +28,10 @@ add_executable(${TEST_TARGET}
 target_compile_features(${TEST_TARGET} PUBLIC cxx_std_20)
 
 # Add sanitizers
-enable_sanitizers_and_strict_warnings(${TEST_TARGET})
+if (USE_SANITIZERS)
+    enable_sanitizers(${TEST_TARGET})
+endif()
+enable_strict_warnings(${TEST_TARGET})
 
 
 # Link our library and Google Test
@@ -45,20 +49,23 @@ target_sources(${TEST_TARGET} PUBLIC
     ${PROJECT_SOURCE_DIR}/tests/components/SimpleAllocator/SimpleAllocator.h
 )
 
+# NOTE: either sanitizers or valgrind can be enabled at a time
 # Add Valgrind options
 find_program(VALGRIND_EXECUTABLE valgrind)
-if (VALGRIND_EXECUTABLE)
+if (DEFINED VALGRIND_EXECUTABLE AND VALGRIND_EXECUTABLE AND NOT USE_SANITIZERS)
     message(STATUS "Valgrind found: ${VALGRIND_EXECUTABLE}")
 
     set(VALGRIND_COMMAND "${VALGRIND_EXECUTABLE}")
-    set(VALGRIND_FLAGS "--leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1")
+    set(VALGRIND_FLAGS --leak-check=full --show-leak-kinds=all --track-origins=yes --error-exitcode=1)
 
     # Wrap tests with Valgrind
     set_tests_properties(tests
         PROPERTIES
         ENVIRONMENT "GTEST_COLOR=1"
-        COMMAND ${VALGRIND_COMMAND} ${VALGRIND_FLAGS} $<TARGET_FILE:${TEST_TARGET}>
+        COMMAND ${VALGRIND_COMMAND} "${VALGRIND_FLAGS}" $<TARGET_FILE:${TEST_TARGET}>
     )
-else()
-    message(WARNING "Valgrind not found; tests and benchmarks will run without Valgrind.")
+elseif (NOT DEFINED VALGRIND_EXECUTABLE OR NOT VALGRIND_EXECUTABLE)
+    message(WARNING "Valgrind not found: tests will run without Valgrind.")
+elseif (USE_SANITIZERS)
+    message(WARNING "Sanitizers are enabled: skipping Valgrind.")
 endif()
