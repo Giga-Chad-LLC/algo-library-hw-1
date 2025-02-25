@@ -4,7 +4,6 @@
 
 #include "components/TreeTester.h"
 #include "components/ParameterizedTreeTests.h"
-#include "components/Report/Report.h"
 
 #include <gtest/gtest.h>
 
