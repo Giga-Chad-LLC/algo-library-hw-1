@@ -18,8 +18,7 @@ add_executable(${PLAYGROUND_TARGET}
 target_compile_features(${PLAYGROUND_TARGET} PUBLIC cxx_std_20)
 
 # Add sanitizers
-# enable_sanitizers_and_strict_warnings(${PLAYGROUND_TARGET})
-enable_sanitizers(${PLAYGROUND_TARGET})
+# enable_sanitizers(${PLAYGROUND_TARGET})
 enable_strict_warnings(${PLAYGROUND_TARGET})
 
 # Link our library
