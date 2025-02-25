@@ -4,6 +4,8 @@
 #### `Makefile`located at the project root. 				   ####
 ###################################################################
 
+# Variables
+THIS_MAKEFILE := "./ci/Makefile"
 
 # Build setup
 .PHONY: ci-setup
@@ -30,8 +32,6 @@ ci-test:
 ci-playground:
 	python3 ./scripts/benchmarking.py -b ./build/playground/playground_tree_algorithms -c ./configs/benchmarking.yaml
 
-
-
 #### CI Installation Steps ####
 
 # CI full installation: LLVM, CMake+Ninja, Valgrind, Python
@@ -39,12 +39,12 @@ ci-playground:
 ci-install:
 	sudo apt-get -y update
 	sudo apt-get install -y wget lsb-release software-properties-common
-	make -f ./ci/Makefile ci-install-llvm
-	make ci-install-cmake
-	make ci-install-ninja
-	make ci-install-valgrind
-	make ci-install-python
-	make ci-install-python-requirements
+	make -f $(THIS_MAKEFILE) ci-install-llvm
+	make -f $(THIS_MAKEFILE) ci-install-cmake
+	make -f $(THIS_MAKEFILE) ci-install-ninja
+	make -f $(THIS_MAKEFILE) ci-install-valgrind
+	make -f $(THIS_MAKEFILE) ci-install-python
+	make -f $(THIS_MAKEFILE) ci-install-python-requirements
 
 
 # Clang and LLVM
