@@ -31,3 +31,5 @@
 *.userprefs
 *.sublime-project
 *.sublime-workspace
+.venv
+venv
