@@ -17,13 +17,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: make install
+        run: make -f ./ci/Makefile ci-install
 
       - name: Build library
-        run: make build-ci
+        run: make -f ./ci/Makefile ci-setup
 
       - name: Run tests
-        run: make test
+        run: make -f ./ci/Makefile ci-test
 
-      - name: Run playground
-        run: make playground
+      - name: Run benchmarks (formerly playground)
+        run: make -f ./ci/Makefile ci-playground
