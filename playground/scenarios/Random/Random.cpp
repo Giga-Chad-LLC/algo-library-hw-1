@@ -47,7 +47,7 @@ namespace playground {
         // reporting time
         const long double elapsed_total = timer.finish(tag);
 
-        report << "=== Report for '" << tag << "' ===\n";
+        report << "=== Report for '" << tag << "', scenario '" << "RANDOM" << "' ===\n";
         // operations
         // insertion
         report << insertion_tag << ":"
