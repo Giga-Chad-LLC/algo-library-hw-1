@@ -1,10 +1,10 @@
 tree_benchmark_config:
-  trees:
+  trees: # which trees to run the benchmark on
     - RBTree
     - AVLTree
     - SplayTree
     - TreapTree
   parameters:
-    benchmark_mode: "all"  # Available modes: "all", "random", "sorted"
+    benchmark_mode: "all"  # available modes: "all", "random", "sorted"
   execution:
-    run_benchmarks: true
+    run_benchmarks: true # set to `false` to omit benchmarks execution
