@@ -33,8 +33,26 @@
 
 В проекте есть cmake-таргет `playground_tree_algorithms`, в нем написан метод `main` и прилинкована библиотека с деревьями. Этот таргер можно использовать для того, чтобы поиграться с деревьями и понять, как ими пользоваться, также там написано несколько примеров работы с деревьями (смотреть папку [playground](./playground)).
 
+
+
+## Структура и описание проекта
+
+- `benchmarking`: Сделать лежат отчеты по прогонке бенчмарков и анализ потребляемой памяти.
+- `ci`: папка для артифактов, используемых для CI. Сейчас там лежит `Makefile`, который вызывается в GitHub Actions (_можно подсмотреть как там ставятся зависимости проекта на `ubuntu-latest`, aka `ubuntu:24.04`_).
+- `configs`: тут лежит yaml-конфиг для запуска бенчмаркинга в двух режимах: 1. обычная прогонка **сценариев** (`memcheck_mode: false`) или 2. прогонка сценариев под анализатором потребляемой памяти `valgrind --tool=massif` (`memcheck_mode: true`).
+- `docs`: материалы документации (смотреть не нужно, они все пролинкованы в этом README).
+- `playground`: тут собирается CMake target с бенчмаркингом деревьем (бенчмарк == сценарий исполнения, смотри интерфейс [Scenario.h](playground/scenarios/Scenario/Scenario.h) u его имплементоров [Random](playground/scenarios/Random/Random.h), [Sorted](playground/scenarios/Sorted/Sorted.h)).
+- `scripts`: [benchmarking.py](./scripts/benchmarking.py) занимается автоматизацией бенчмаркинга и под капотом запускает [playground/main.cpp](./playground/main.cpp) с конфигом [benchmarking.yaml](./configs/benchmarking.yaml); см. его описание.
+- `src`: сурсы деревьев, которые имплементируют интерфейс [BSTree.cpp](src/modules/trees/BSTree.cpp) (папка `src/impl` не используется, стоит игнорировать).
+- `tests`: unit-тесты, написанные на Google Test (см. файл [test_tree_algorithms.cpp](tests/test_tree_algorithms.cpp)).
+- `Makefile`: локальная сборка и запуск CMake-таргетов.
+- `requirements.txt`: зависимости python, которые используются в [benchmarking.py](./scripts/benchmarking.py) (их по минимуму).
+
+
+
+
 ## Дополнительно
 
-1. [Требования](docs/REQUIREMENTS.md)
-1. [Сборка](docs/BUILD.md)
+1. [Требования и расширение новыми деревьями](docs/REQUIREMENTS.md)
+1. [Сборка и локальная разработка](docs/BUILD.md)
 1. [Отчет по бенчмаркам](docs/BENCHMARKS.md)
