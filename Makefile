@@ -74,4 +74,4 @@ test:
 
 .PHONY: playground
 playground:
-	./build/playground/playground_tree_algorithms
+	./scripts/benchmarking.py -b ./build/playground/playground_tree_algorithms
