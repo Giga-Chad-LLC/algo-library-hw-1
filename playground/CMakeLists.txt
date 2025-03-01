@@ -1,0 +1,25 @@
+# Add test executable
+set(PLAYGROUND_TARGET playground_tree_algorithms)
+
+add_executable(${PLAYGROUND_TARGET}
+    ${PROJECT_SOURCE_DIR}/playground/main.cpp
+    # scenarios
+    ${PROJECT_SOURCE_DIR}/playground/scenarios/Random/Random.cpp
+    ${PROJECT_SOURCE_DIR}/playground/scenarios/Scenario/Scenario.h
+
+    # components
+    ${PROJECT_SOURCE_DIR}/playground/components/Report/Report.cpp
+    ${PROJECT_SOURCE_DIR}/playground/components/ExecutionTimer/ExecutionTimer.cpp
+        scenarios/Sorted/Sorted.h
+        scenarios/Sorted/Sorted.cpp
+)
+
+# Enable C++20
+target_compile_features(${PLAYGROUND_TARGET} PUBLIC cxx_std_20)
+
+# Add sanitizers
+# enable_sanitizers(${PLAYGROUND_TARGET})
+enable_strict_warnings(${PLAYGROUND_TARGET})
+
+# Link our library
+target_link_libraries(${PLAYGROUND_TARGET} PRIVATE tree_algorithms)

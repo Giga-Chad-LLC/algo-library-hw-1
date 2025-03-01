@@ -1,0 +1,13 @@
+tree_benchmark_config:
+  # which trees to run the benchmark on
+  # when implementing your tree mention it here and in `playground/main.cpp::make_tree_by_name()` function
+  trees:
+    - RBTree
+    - AVLTree
+    - SplayTree
+    - TreapTree
+  parameters:
+    benchmark_mode: "all"  # available modes: "all", "random", "sorted"
+    memcheck_mode: false  # whether to execute the benchmarks with the valgrind massif tool (for memory consumption analysis)
+  execution:
+    run_benchmarks: true  # set to `false` to omit benchmarks execution

@@ -1,0 +1,122 @@
+Operating System: Linux 6.12.5-linuxkit
+Platform: Linux-6.12.5-linuxkit-aarch64-with-glibc2.40
+Processor: aarch64
+RAM: 7.65 GB
+Reading configuration from: ../configs/benchmarking.yaml
+Configured Trees: ['RBTree', 'AVLTree', 'SplayTree', 'TreapTree']
+Benchmark Mode: all
+Memcheck Mode: False
+
+Running benchmark for tree: RBTree with mode: all
+==== Output for RBTree ====
+=== Report for 'RBTree<int>', scenario 'RANDOM' ===
+INSERTION:
+        Operations executed: 200000
+        Total time elapsed: 88.1121ms
+        Avg. time per operation: 0.00044056ms
+REMOVAL:
+        Operations executed: 200000
+        Succeeded (removed an element): 196417
+        Total time elapsed: 61.9521ms
+        Avg. time per operation: 0.00030976ms
+Total time: 203.507ms
+
+
+=== Report for 'RBTree<int>', scenario 'SORTED' ===
+INSERTION:
+        Operations executed: 200000
+        Total time elapsed: 57.9249ms
+        Avg. time per operation: 0.000289624ms
+REMOVAL:
+        Operations executed: 200000
+        Succeeded (removed an element): 200000
+        Total time elapsed: 81.8994ms
+        Avg. time per operation: 0.000409497ms
+Total time: 184.244ms
+
+
+
+Running benchmark for tree: AVLTree with mode: all
+==== Output for AVLTree ====
+=== Report for 'AVLTree<int>', scenario 'RANDOM' ===
+INSERTION:
+        Operations executed: 200000
+        Total time elapsed: 269.992ms
+        Avg. time per operation: 0.00134996ms
+REMOVAL:
+        Operations executed: 200000
+        Succeeded (removed an element): 196417
+        Total time elapsed: 240.534ms
+        Avg. time per operation: 0.00120267ms
+Total time: 568.426ms
+
+
+=== Report for 'AVLTree<int>', scenario 'SORTED' ===
+INSERTION:
+        Operations executed: 200000
+        Total time elapsed: 266.706ms
+        Avg. time per operation: 0.00133353ms
+REMOVAL:
+        Operations executed: 200000
+        Succeeded (removed an element): 200000
+        Total time elapsed: 285.161ms
+        Avg. time per operation: 0.00142581ms
+Total time: 603.959ms
+
+
+
+Running benchmark for tree: SplayTree with mode: all
+==== Output for SplayTree ====
+=== Report for 'SplayTree<int>', scenario 'RANDOM' ===
+INSERTION:
+        Operations executed: 200000
+        Total time elapsed: 79.7856ms
+        Avg. time per operation: 0.000398928ms
+REMOVAL:
+        Operations executed: 200000
+        Succeeded (removed an element): 196417
+        Total time elapsed: 87.5927ms
+        Avg. time per operation: 0.000437963ms
+Total time: 220.163ms
+
+
+=== Report for 'SplayTree<int>', scenario 'SORTED' ===
+INSERTION:
+        Operations executed: 200000
+        Total time elapsed: 35.4211ms
+        Avg. time per operation: 0.000177106ms
+REMOVAL:
+        Operations executed: 200000
+        Succeeded (removed an element): 200000
+        Total time elapsed: 144.953ms
+        Avg. time per operation: 0.000724767ms
+Total time: 226.966ms
+
+
+
+Running benchmark for tree: TreapTree with mode: all
+==== Output for TreapTree ====
+=== Report for 'TreapTree<int>', scenario 'RANDOM' ===
+INSERTION:
+        Operations executed: 200000
+        Total time elapsed: 149.734ms
+        Avg. time per operation: 0.000748669ms
+REMOVAL:
+        Operations executed: 200000
+        Succeeded (removed an element): 196417
+        Total time elapsed: 87.178ms
+        Avg. time per operation: 0.00043589ms
+Total time: 291.088ms
+
+
+=== Report for 'TreapTree<int>', scenario 'SORTED' ===
+INSERTION:
+        Operations executed: 200000
+        Total time elapsed: 69.4968ms
+        Avg. time per operation: 0.000347484ms
+REMOVAL:
+        Operations executed: 200000
+        Succeeded (removed an element): 200000
+        Total time elapsed: 72.2115ms
+        Avg. time per operation: 0.000361058ms
+Total time: 187.702ms

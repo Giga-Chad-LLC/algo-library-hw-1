@@ -1,0 +1,1316 @@
+desc: --massif-out-file=memcheck_results/TreapTree/massif.TreapTree-all.txt
+cmd: /root/projects/algo-library/build/playground/playground_tree_algorithms TreapTree all
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=56734825
+mem_heap_B=448224
+mem_heap_extra_B=145768
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=111505163
+mem_heap_B=790080
+mem_heap_extra_B=282504
+mem_stacks_B=0
+heap_tree=detailed
+n3: 790080 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 706040 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 706040 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 706040 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 706040 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 706040 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 706040 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=3
+#-----------
+time=152639163
+mem_heap_B=1036880
+mem_heap_extra_B=381224
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1036880 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 952840 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 952840 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 952840 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 952840 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 952840 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 952840 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=216396594
+mem_heap_B=1417560
+mem_heap_extra_B=533496
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1417560 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1333520 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1333520 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1333520 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 1333520 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 1333520 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 1333520 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=5
+#-----------
+time=276993777
+mem_heap_B=1775400
+mem_heap_extra_B=676632
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=321748190
+mem_heap_B=2038560
+mem_heap_extra_B=781896
+mem_stacks_B=0
+heap_tree=detailed
+n3: 2038560 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1954520 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1954520 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1954520 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 1954520 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 1954520 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 1954520 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=7
+#-----------
+time=381402440
+mem_heap_B=2386560
+mem_heap_extra_B=921096
+mem_stacks_B=0
+heap_tree=detailed
+n3: 2386560 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2302520 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 2302520 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 2302520 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 2302520 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 2302520 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 2302520 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=8
+#-----------
+time=461540573
+mem_heap_B=2850400
+mem_heap_extra_B=1106632
+mem_stacks_B=0
+heap_tree=detailed
+n3: 2850400 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2766360 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 2766360 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 2766360 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 2766360 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 2766360 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 2766360 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=9
+#-----------
+time=501983627
+mem_heap_B=3084760
+mem_heap_extra_B=1200376
+mem_stacks_B=0
+heap_tree=detailed
+n3: 3084760 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 3000720 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 3000720 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 3000720 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 3000720 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 3000720 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 3000720 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=10
+#-----------
+time=563245765
+mem_heap_B=3439040
+mem_heap_extra_B=1342088
+mem_stacks_B=0
+heap_tree=detailed
+n3: 3439040 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 3355000 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 3355000 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 3355000 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 3355000 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 3355000 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 3355000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=11
+#-----------
+time=653735657
+mem_heap_B=3949800
+mem_heap_extra_B=1546392
+mem_stacks_B=0
+heap_tree=detailed
+n3: 3949800 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 3865760 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 3865760 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 3865760 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 3865760 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 3865760 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 3865760 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=704165465
+mem_heap_B=4233160
+mem_heap_extra_B=1659736
+mem_stacks_B=0
+heap_tree=detailed
+n3: 4233160 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4149120 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 4149120 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 4149120 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 4149120 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 4149120 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 4149120 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=13
+#-----------
+time=765834431
+mem_heap_B=4578040
+mem_heap_extra_B=1797688
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=832976781
+mem_heap_B=4951544
+mem_heap_extra_B=1947096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=908333978
+mem_heap_B=5369120
+mem_heap_extra_B=2114120
+mem_stacks_B=0
+heap_tree=detailed
+n2: 5369120 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5285080 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 5285080 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 5285080 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 5285080 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 5285080 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 5285080 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 84040 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=16
+#-----------
+time=979663237
+mem_heap_B=5754840
+mem_heap_extra_B=2268408
+mem_stacks_B=0
+heap_tree=detailed
+n2: 5754840 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 5670800 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 5670800 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 5670800 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 5670800 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 5670800 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 5670800 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 84040 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=17
+#-----------
+time=1066062721
+mem_heap_B=6223640
+mem_heap_extra_B=2455928
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=1112094655
+mem_heap_B=6472704
+mem_heap_extra_B=2555560
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=1175166151
+mem_heap_B=6811400
+mem_heap_extra_B=2691032
+mem_stacks_B=0
+heap_tree=detailed
+n2: 6811400 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 6727360 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 6727360 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 6727360 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 6727360 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 6727360 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 6727360 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 84040 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=20
+#-----------
+time=1226557666
+mem_heap_B=7087040
+mem_heap_extra_B=2801288
+mem_stacks_B=0
+heap_tree=detailed
+n2: 7087040 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7003000 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7003000 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7003000 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 7003000 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7003000 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7003000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 84040 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=1280075961
+mem_heap_B=7373920
+mem_heap_extra_B=2916040
+mem_stacks_B=0
+heap_tree=detailed
+n2: 7373920 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7289880 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7289880 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7289880 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 7289880 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7289880 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7289880 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 84040 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=22
+#-----------
+time=1335969244
+mem_heap_B=7672440
+mem_heap_extra_B=3035448
+mem_stacks_B=0
+heap_tree=detailed
+n2: 7672440 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7588400 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7588400 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7588400 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 7588400 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7588400 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7588400 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 84040 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=23
+#-----------
+time=1409029038
+mem_heap_B=8062720
+mem_heap_extra_B=3191560
+mem_stacks_B=0
+heap_tree=detailed
+n2: 8062720 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7978680 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7978680 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7978680 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 7978680 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7978680 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7978680 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 84040 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=24
+#-----------
+time=1452722189
+mem_heap_B=7729904
+mem_heap_extra_B=3058440
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=1510979439
+mem_heap_B=7225400
+mem_heap_extra_B=2856632
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=1554675442
+mem_heap_B=6848680
+mem_heap_extra_B=2705944
+mem_stacks_B=0
+heap_tree=detailed
+n2: 6848680 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 6764640 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 6764640 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 6764640 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 6764640 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 6764640 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 6764640 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 84040 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=27
+#-----------
+time=1612952955
+mem_heap_B=6351584
+mem_heap_extra_B=2507112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=1671211519
+mem_heap_B=5861040
+mem_heap_extra_B=2310888
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=1714904844
+mem_heap_B=5492480
+mem_heap_extra_B=2163464
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=1773180498
+mem_heap_B=5001800
+mem_heap_extra_B=1967192
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=1831441512
+mem_heap_B=4509880
+mem_heap_extra_B=1770424
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=1881988990
+mem_heap_B=4085000
+mem_heap_extra_B=1600472
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=1946247136
+mem_heap_B=3545280
+mem_heap_extra_B=1384584
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=1989087531
+mem_heap_B=3186520
+mem_heap_extra_B=1241080
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=2074765530
+mem_heap_B=2456480
+mem_heap_extra_B=949080
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=2139026587
+mem_heap_B=1911520
+mem_heap_extra_B=731080
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=2181868166
+mem_heap_B=1546400
+mem_heap_extra_B=585032
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=2267546414
+mem_heap_B=814960
+mem_heap_extra_B=292456
+mem_stacks_B=0
+heap_tree=detailed
+n3: 814960 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 730920 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 730920 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 730920 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n1: 730920 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 730920 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 730920 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 10312 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=39
+#-----------
+time=2310386257
+mem_heap_B=469864
+mem_heap_extra_B=154424
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=2364716136
+mem_heap_B=1831240
+mem_heap_extra_B=57392
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=2434032230
+mem_heap_B=1831296
+mem_heap_extra_B=57408
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=2498290593
+mem_heap_B=2385120
+mem_heap_extra_B=278928
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=2583969771
+mem_heap_B=3090520
+mem_heap_extra_B=561088
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=2626810699
+mem_heap_B=3444280
+mem_heap_extra_B=702592
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=2691072336
+mem_heap_B=3949600
+mem_heap_extra_B=904720
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=2755331297
+mem_heap_B=4472320
+mem_heap_extra_B=1113808
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4472320 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2784240 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 2784240 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 2784240 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 2784240 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 2640920 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 2640920 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 14352 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=47
+#-----------
+time=2841010953
+mem_heap_B=5158056
+mem_heap_extra_B=1388096
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=2905270440
+mem_heap_B=5666976
+mem_heap_extra_B=1591664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=2990951646
+mem_heap_B=6344880
+mem_heap_extra_B=1862832
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=3031394914
+mem_heap_B=6641856
+mem_heap_extra_B=1981616
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=3071838723
+mem_heap_B=6943696
+mem_heap_extra_B=2102352
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=3112282195
+mem_heap_B=7244400
+mem_heap_extra_B=2222640
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=3152727561
+mem_heap_B=7540760
+mem_heap_extra_B=2341184
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=3193172383
+mem_heap_B=7867440
+mem_heap_extra_B=2471856
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=3233617724
+mem_heap_B=8175400
+mem_heap_extra_B=2595040
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=3274062937
+mem_heap_B=8471880
+mem_heap_extra_B=2713632
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=3290773989
+mem_heap_B=8601416
+mem_heap_extra_B=2765440
+mem_stacks_B=0
+heap_tree=detailed
+n3: 8601416 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 6913280 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 6913280 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 6913280 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 6913280 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 6769960 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 6769960 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=58
+#-----------
+time=3301620635
+mem_heap_B=8682616
+mem_heap_extra_B=2797920
+mem_stacks_B=0
+heap_tree=detailed
+n3: 8682616 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 6994480 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 6994480 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 6994480 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 6994480 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 6851160 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 6851160 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=59
+#-----------
+time=3312625295
+mem_heap_B=8764656
+mem_heap_extra_B=2830736
+mem_stacks_B=0
+heap_tree=detailed
+n3: 8764656 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7076520 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7076520 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7076520 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7076520 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 6933200 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 6933200 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=3323758791
+mem_heap_B=8847496
+mem_heap_extra_B=2863872
+mem_stacks_B=0
+heap_tree=detailed
+n3: 8847496 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7159360 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7159360 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7159360 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7159360 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7016040 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7016040 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=61
+#-----------
+time=3334748149
+mem_heap_B=8931176
+mem_heap_extra_B=2897344
+mem_stacks_B=0
+heap_tree=detailed
+n3: 8931176 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7243040 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7243040 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7243040 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7243040 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7099720 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7099720 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=62
+#-----------
+time=3346283557
+mem_heap_B=9015696
+mem_heap_extra_B=2931152
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9015696 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7327560 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7327560 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7327560 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7327560 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7184240 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7184240 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=63
+#-----------
+time=3357307864
+mem_heap_B=9101056
+mem_heap_extra_B=2965296
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9101056 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7412920 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7412920 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7412920 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7412920 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7269600 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7269600 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=64
+#-----------
+time=3368854521
+mem_heap_B=9187256
+mem_heap_extra_B=2999776
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9187256 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7499120 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7499120 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7499120 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7499120 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7355800 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7355800 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=65
+#-----------
+time=3380786561
+mem_heap_B=9274336
+mem_heap_extra_B=3034608
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9274336 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7586200 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7586200 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7586200 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7586200 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7442880 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7442880 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=66
+#-----------
+time=3392337003
+mem_heap_B=9362296
+mem_heap_extra_B=3069792
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9362296 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7674160 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7674160 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7674160 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7674160 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7530840 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7530840 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=67
+#-----------
+time=3404605159
+mem_heap_B=9451136
+mem_heap_extra_B=3105328
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9451136 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7763000 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7763000 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7763000 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7763000 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7619680 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7619680 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=68
+#-----------
+time=3417203280
+mem_heap_B=9540856
+mem_heap_extra_B=3141216
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9540856 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7852720 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7852720 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7852720 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7852720 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7709400 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7709400 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=69
+#-----------
+time=3430078259
+mem_heap_B=9631456
+mem_heap_extra_B=3177456
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9631456 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 7943320 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 7943320 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 7943320 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 7943320 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7800000 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=70
+#-----------
+time=3443112737
+mem_heap_B=9722976
+mem_heap_extra_B=3214064
+mem_stacks_B=0
+heap_tree=detailed
+n3: 9722976 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8034840 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 8034840 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 8034840 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 8034840 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7891520 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7891520 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=71
+#-----------
+time=3456581677
+mem_heap_B=9815416
+mem_heap_extra_B=3251040
+mem_stacks_B=0
+heap_tree=peak
+n3: 9815416 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 8127280 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 8127280 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 8127280 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 8127280 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 7983960 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 7983960 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143320 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88136 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=72
+#-----------
+time=3497024933
+mem_heap_B=9463416
+mem_heap_extra_B=3110240
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=3537468251
+mem_heap_B=9071616
+mem_heap_extra_B=2953520
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=3577912650
+mem_heap_B=8679656
+mem_heap_extra_B=2796736
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=3618356509
+mem_heap_B=8287216
+mem_heap_extra_B=2639760
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=3658800062
+mem_heap_B=7894256
+mem_heap_extra_B=2482576
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=3699244745
+mem_heap_B=7501376
+mem_heap_extra_B=2325424
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=3739687954
+mem_heap_B=7109056
+mem_heap_extra_B=2168496
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=3780131329
+mem_heap_B=6715840
+mem_heap_extra_B=2011216
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=3820575298
+mem_heap_B=6322216
+mem_heap_extra_B=1853760
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=3861018994
+mem_heap_B=5927560
+mem_heap_extra_B=1695904
+mem_stacks_B=0
+heap_tree=detailed
+n3: 5927560 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4239480 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 4239480 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 4239480 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 4239480 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 4096320 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 4096320 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143160 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143160 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n0: 88080 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=82
+#-----------
+time=3901463182
+mem_heap_B=5532560
+mem_heap_extra_B=1537904
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=3941906465
+mem_heap_B=5136616
+mem_heap_extra_B=1379520
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=3982350847
+mem_heap_B=4742616
+mem_heap_extra_B=1221920
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=4022796292
+mem_heap_B=4348976
+mem_heap_extra_B=1064464
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=4063240472
+mem_heap_B=3957296
+mem_heap_extra_B=907792
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=4103683882
+mem_heap_B=3562456
+mem_heap_extra_B=749856
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=4144127402
+mem_heap_B=3162576
+mem_heap_extra_B=589904
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=4184570851
+mem_heap_B=2761376
+mem_heap_extra_B=429424
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=4225014421
+mem_heap_B=2356896
+mem_heap_extra_B=267632
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=4265457969
+mem_heap_B=1945120
+mem_heap_extra_B=102928
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1945120 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1600000 0x11BEDF: std::__new_allocator<int>::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 1600000 0x11BE5F: std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 1600000 0x11BDA3: std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 1600000 0x11BC0F: std::_Vector_base<int, std::allocator<int> >::_Vector_base(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B797: std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B0F7: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 800000 0x11B8C7: std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n1: 800000 0x11B177: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+       n0: 800000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 257040 0x113F77: std::__new_allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >::allocate(unsigned long, void const*) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+  n1: 257040 0x113ED7: trees::nodes::TreapTreeNode@tree_algorithms<int>* trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create<trees::nodes::TreapTreeNode@tree_algorithms<int>, std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> > >(std::allocator<trees::nodes::TreapTreeNode@tree_algorithms<int> >&, int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+   n1: 257040 0x113B43: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::create(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+    n2: 257040 0x11388B: trees::TreapTree@tree_algorithms<int, std::less<int>, std::allocator<int> >::insert(int const&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 143000 0x117883: playground::Random::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 143000 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+     n1: 114040 0x11B223: playground::Sorted::run(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::unique_ptr<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> >, std::default_delete<trees::BSTree@tree_algorithms<int, std::less<int>, std::allocator<int> > > >&) (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+      n0: 114040 0x10BACF: main (in /root/projects/algo-library/build/playground/playground_tree_algorithms)
+ n1: 73728 0x4955863: ??? (in /usr/lib/aarch64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x4003CC3: call_init (dl-init.c:74)
+   n1: 73728 0x4003CC3: call_init (dl-init.c:26)
+    n1: 73728 0x4003DDB: _dl_init (dl-init.c:121)
+     n0: 73728 0x401A237: (below main) (dl-start.S:46)
+ n0: 14352 in 9 places, all below massif's threshold (1.00%)

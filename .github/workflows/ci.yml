@@ -1,0 +1,29 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: make -f ./ci/Makefile ci-install
+
+      - name: Build library
+        run: make -f ./ci/Makefile ci-setup
+
+      - name: Run tests
+        run: make -f ./ci/Makefile ci-test
+
+      - name: Run benchmarks (formerly playground)
+        run: make -f ./ci/Makefile ci-playground
